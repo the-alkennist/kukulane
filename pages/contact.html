@@ -454,6 +454,7 @@
 
           // Get values from the form
           var user_name = document.getElementById('ContactFormName').value;
+          var user_phone = document.getElementById('ContactFormPhone').value;
           var user_email = document.getElementById('ContactFormEmail').value;
           var message = document.getElementById('ContactFormMessage').value;
 
@@ -464,6 +465,7 @@
               reply_to: user_email, // Use the email from the form
               message: message, // Use the message from the form
               from_name: user_name, // Use the name from the form
+              phone_no: user_phone,
               to_email:"kukuwaytush@gmail.com",
           })
               .then(() => {
