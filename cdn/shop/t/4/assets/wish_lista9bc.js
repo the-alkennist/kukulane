@@ -1,4 +1,4 @@
-/** Shopify CDN: Minification failed
+/** alkena CDN: Minification failed
 
 Line 17:2 Transforming let to the configured target environment ("es5") is not supported yet
 Line 18:10 Transforming rest arguments to the configured target environment ("es5") is not supported yet
@@ -26,7 +26,7 @@ class dTX_WhistList {
     constructor() {
         this.wishListData = [];
 
-        this.LOCAL_STORAGE_WISHLIST_KEY = 'shopify-wishlist';
+        this.LOCAL_STORAGE_WISHLIST_KEY = 'alkena-wishlist';
         this.LOCAL_STORAGE_DELIMITER = ',';
     }
 

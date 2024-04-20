@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:s="http://jadedpixel.com/-/spec/shopify">
-  <id>https://onky-special.myshopify.com/collections/all.atom</id>
-  <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/collections/all"/>
-  <link rel="self" type="application/atom+xml" href="https://onky-special.myshopify.com/collections/new-arrival.atom"/>
+<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:s="http://jadedpixel.com/-/spec/alkena">
+  <id>https://onky-special.myalkena.com/collections/all.atom</id>
+  <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/collections/all"/>
+  <link rel="self" type="application/atom+xml" href="https://onky-special.myalkena.com/collections/new-arrival.atom"/>
   <title>onky-special (password: buddha)</title>
   <updated>2018-11-25T19:23:16-12:00</updated>
   <author>
     <name>onky-special (password: buddha)</name>
   </author>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1528698994788</id>
+    <id>https://onky-special.myalkena.com/products/1528698994788</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/pork-ribs"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/pork-ribs"/>
     <title>Pork Ribs</title>
     <s:type>Meat</s:type>
     <s:vendor>Pig</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product34_a3bf4909-ec79-44d0-bee4-c2c85cda3b3e.jpg?v=1543299554"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product34_a3bf4909-ec79-44d0-bee4-c2c85cda3b3e.jpg?v=1543299554"></td>
     <td valign="bottom">
       <p>
 
@@ -27,7 +27,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             329.00 - 489.00
-            <a href="https://onky-special.myshopify.com/products/pork-ribs">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/pork-ribs">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -42,14 +42,14 @@
     <s:tag>Meat</s:tag>
     <s:tag>Pig</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1528698994788</id>
+      <id>https://onky-special.myalkena.com/products/1528698994788</id>
       <title>1 kg</title>
       <s:price currency="USD">329.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1528698994788</id>
+      <id>https://onky-special.myalkena.com/products/1528698994788</id>
       <title>2 kg</title>
       <s:price currency="USD">489.00</s:price>
       <s:sku></s:sku>
@@ -57,17 +57,17 @@
     </s:variant>
   </entry>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1528655511652</id>
+    <id>https://onky-special.myalkena.com/products/1528655511652</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/pork-piece"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/pork-piece"/>
     <title>Pork Piece</title>
     <s:type>Meat</s:type>
     <s:vendor>Pig</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product32_cbee04cb-afac-4e5f-a624-f6e8bb8006b5.jpg?v=1543299408"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product32_cbee04cb-afac-4e5f-a624-f6e8bb8006b5.jpg?v=1543299408"></td>
     <td valign="bottom">
       <p>
 
@@ -75,7 +75,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             329.00 - 489.00
-            <a href="https://onky-special.myshopify.com/products/pork-piece">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/pork-piece">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -90,14 +90,14 @@
     <s:tag>Meat</s:tag>
     <s:tag>Pig</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1528655511652</id>
+      <id>https://onky-special.myalkena.com/products/1528655511652</id>
       <title>3 kg</title>
       <s:price currency="USD">329.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1528655511652</id>
+      <id>https://onky-special.myalkena.com/products/1528655511652</id>
       <title>2 kg</title>
       <s:price currency="USD">489.00</s:price>
       <s:sku></s:sku>
@@ -105,17 +105,17 @@
     </s:variant>
   </entry>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1515921768548</id>
+    <id>https://onky-special.myalkena.com/products/1515921768548</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/seasonal-chops"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/seasonal-chops"/>
     <title>Seasonal Chops</title>
     <s:type>Meat</s:type>
     <s:vendor>Pig</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product31_f7202e94-ccba-4edf-8f10-925b336ee8b1.jpg?v=1543235271"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product31_f7202e94-ccba-4edf-8f10-925b336ee8b1.jpg?v=1543235271"></td>
     <td valign="bottom">
       <p>
 
@@ -123,7 +123,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             231.00 - 289.00
-            <a href="https://onky-special.myshopify.com/products/seasonal-chops">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/seasonal-chops">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -138,14 +138,14 @@
     <s:tag>Meat</s:tag>
     <s:tag>Pig</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1515921768548</id>
+      <id>https://onky-special.myalkena.com/products/1515921768548</id>
       <title>3 kg</title>
       <s:price currency="USD">231.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1515921768548</id>
+      <id>https://onky-special.myalkena.com/products/1515921768548</id>
       <title>2 kg</title>
       <s:price currency="USD">289.00</s:price>
       <s:sku></s:sku>
@@ -153,17 +153,17 @@
     </s:variant>
   </entry>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1515855085668</id>
+    <id>https://onky-special.myalkena.com/products/1515855085668</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/sausage-trio"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/sausage-trio"/>
     <title>Sausage &amp; Trio</title>
     <s:type>Meat</s:type>
     <s:vendor>Chops</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product29.jpg?v=1543234613"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product29.jpg?v=1543234613"></td>
     <td valign="bottom">
       <p>
 
@@ -171,7 +171,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             129.00 - 189.00
-            <a href="https://onky-special.myshopify.com/products/sausage-trio">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/sausage-trio">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -186,14 +186,14 @@
     <s:tag>Chops</s:tag>
     <s:tag>Meat</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1515855085668</id>
+      <id>https://onky-special.myalkena.com/products/1515855085668</id>
       <title>500 gm</title>
       <s:price currency="USD">129.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1515855085668</id>
+      <id>https://onky-special.myalkena.com/products/1515855085668</id>
       <title>1 kg</title>
       <s:price currency="USD">189.00</s:price>
       <s:sku></s:sku>
@@ -201,17 +201,17 @@
     </s:variant>
   </entry>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1515826806884</id>
+    <id>https://onky-special.myalkena.com/products/1515826806884</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/sausage-slice"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/sausage-slice"/>
     <title>Sausage Slice</title>
     <s:type>Meat</s:type>
     <s:vendor>Chops</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product27_46797f05-5fcf-4ece-8b86-364829745f91.jpg?v=1543234317"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product27_46797f05-5fcf-4ece-8b86-364829745f91.jpg?v=1543234317"></td>
     <td valign="bottom">
       <p>
 
@@ -219,7 +219,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             329.00 - 489.00
-            <a href="https://onky-special.myshopify.com/products/sausage-slice">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/sausage-slice">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -234,14 +234,14 @@
     <s:tag>Chops</s:tag>
     <s:tag>Meat</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1515826806884</id>
+      <id>https://onky-special.myalkena.com/products/1515826806884</id>
       <title>2 kg</title>
       <s:price currency="USD">329.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1515826806884</id>
+      <id>https://onky-special.myalkena.com/products/1515826806884</id>
       <title>1 kg</title>
       <s:price currency="USD">489.00</s:price>
       <s:sku></s:sku>
@@ -249,17 +249,17 @@
     </s:variant>
   </entry>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1515281449060</id>
+    <id>https://onky-special.myalkena.com/products/1515281449060</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/pork-lolipop"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/pork-lolipop"/>
     <title>Pork Lolipop</title>
     <s:type>Meat</s:type>
     <s:vendor>Bacon</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product19_0e2293be-6d02-4f84-adbe-4ae71f29c816.jpg?v=1543231426"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product19_0e2293be-6d02-4f84-adbe-4ae71f29c816.jpg?v=1543231426"></td>
     <td valign="bottom">
       <p>
 
@@ -267,7 +267,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             219.00 - 298.00
-            <a href="https://onky-special.myshopify.com/products/pork-lolipop">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/pork-lolipop">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -282,14 +282,14 @@
     <s:tag>Bacon</s:tag>
     <s:tag>Meat</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1515281449060</id>
+      <id>https://onky-special.myalkena.com/products/1515281449060</id>
       <title>500 gm</title>
       <s:price currency="USD">219.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1515281449060</id>
+      <id>https://onky-special.myalkena.com/products/1515281449060</id>
       <title>1 kg</title>
       <s:price currency="USD">298.00</s:price>
       <s:sku></s:sku>
@@ -297,17 +297,17 @@
     </s:variant>
   </entry>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1515074322532</id>
+    <id>https://onky-special.myalkena.com/products/1515074322532</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/sausage-twin-piece"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/sausage-twin-piece"/>
     <title>Sausage Twin Piece</title>
     <s:type>Meat</s:type>
     <s:vendor>Pig</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product18.jpg?v=1543230091"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product18.jpg?v=1543230091"></td>
     <td valign="bottom">
       <p>
 
@@ -315,7 +315,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             729.00 - 859.00
-            <a href="https://onky-special.myshopify.com/products/sausage-twin-piece">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/sausage-twin-piece">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -330,14 +330,14 @@
     <s:tag>Meat</s:tag>
     <s:tag>Pig</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1515074322532</id>
+      <id>https://onky-special.myalkena.com/products/1515074322532</id>
       <title>2 kg</title>
       <s:price currency="USD">729.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1515074322532</id>
+      <id>https://onky-special.myalkena.com/products/1515074322532</id>
       <title>1 kg</title>
       <s:price currency="USD">859.00</s:price>
       <s:sku></s:sku>
@@ -345,17 +345,17 @@
     </s:variant>
   </entry>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1514931028068</id>
+    <id>https://onky-special.myalkena.com/products/1514931028068</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/new-york-strips"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/new-york-strips"/>
     <title>New York Strips</title>
     <s:type>Meat</s:type>
     <s:vendor>Bartwurd</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product14_5b437688-23a5-4ffb-bbab-3a52d9e97422.jpg?v=1543228911"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product14_5b437688-23a5-4ffb-bbab-3a52d9e97422.jpg?v=1543228911"></td>
     <td valign="bottom">
       <p>
 
@@ -363,7 +363,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             529.00 - 649.00
-            <a href="https://onky-special.myshopify.com/products/new-york-strips">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/new-york-strips">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -378,14 +378,14 @@
     <s:tag>Bartwurd</s:tag>
     <s:tag>Meat</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1514931028068</id>
+      <id>https://onky-special.myalkena.com/products/1514931028068</id>
       <title>2 kg</title>
       <s:price currency="USD">529.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1514931028068</id>
+      <id>https://onky-special.myalkena.com/products/1514931028068</id>
       <title>500 gm</title>
       <s:price currency="USD">649.00</s:price>
       <s:sku></s:sku>
@@ -393,17 +393,17 @@
     </s:variant>
   </entry>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1514764796004</id>
+    <id>https://onky-special.myalkena.com/products/1514764796004</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/sausage-cheese"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/sausage-cheese"/>
     <title>Sausage &amp; Cheese</title>
     <s:type>Meat</s:type>
     <s:vendor>Bartwurd</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product12_98e75979-6360-41e6-9a01-91f9afc3462d.jpg?v=1543906884"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product12_98e75979-6360-41e6-9a01-91f9afc3462d.jpg?v=1543906884"></td>
     <td valign="bottom">
       <p>
 
@@ -411,7 +411,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             138.00 - 189.00
-            <a href="https://onky-special.myshopify.com/products/sausage-cheese">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/sausage-cheese">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -426,14 +426,14 @@
     <s:tag>Bartwurd</s:tag>
     <s:tag>Meat</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1514764796004</id>
+      <id>https://onky-special.myalkena.com/products/1514764796004</id>
       <title>2 kg</title>
       <s:price currency="USD">189.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1514764796004</id>
+      <id>https://onky-special.myalkena.com/products/1514764796004</id>
       <title>500 gm</title>
       <s:price currency="USD">138.00</s:price>
       <s:sku></s:sku>
@@ -441,17 +441,17 @@
     </s:variant>
   </entry>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1514591256676</id>
+    <id>https://onky-special.myalkena.com/products/1514591256676</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/pork-tenderoins"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/pork-tenderoins"/>
     <title>Pork Tenderoins</title>
     <s:type>Meat</s:type>
     <s:vendor>Chops</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product8_492b9aa4-97d8-4d1c-9c9e-713283c0a374.jpg?v=1543226090"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product8_492b9aa4-97d8-4d1c-9c9e-713283c0a374.jpg?v=1543226090"></td>
     <td valign="bottom">
       <p>
 
@@ -459,7 +459,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             528.00 - 689.00
-            <a href="https://onky-special.myshopify.com/products/pork-tenderoins">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/pork-tenderoins">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -474,14 +474,14 @@
     <s:tag>Chops</s:tag>
     <s:tag>Meat</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1514591256676</id>
+      <id>https://onky-special.myalkena.com/products/1514591256676</id>
       <title>1 kg</title>
       <s:price currency="USD">689.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1514591256676</id>
+      <id>https://onky-special.myalkena.com/products/1514591256676</id>
       <title>3 kg</title>
       <s:price currency="USD">528.00</s:price>
       <s:sku></s:sku>
@@ -489,17 +489,17 @@
     </s:variant>
   </entry>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1514020929636</id>
+    <id>https://onky-special.myalkena.com/products/1514020929636</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/sausage-piece-pork"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/sausage-piece-pork"/>
     <title>Sausage Piece Pork</title>
     <s:type>Meat</s:type>
     <s:vendor>Fresho</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product13_f5f17529-e9f2-4f67-97ae-f9318d488170.jpg?v=1543221341"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product13_f5f17529-e9f2-4f67-97ae-f9318d488170.jpg?v=1543221341"></td>
     <td valign="bottom">
       <p>
 
@@ -507,7 +507,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             247.00 - 296.00
-            <a href="https://onky-special.myshopify.com/products/sausage-piece-pork">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/sausage-piece-pork">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -522,14 +522,14 @@
     <s:tag>Fresho</s:tag>
     <s:tag>Meat</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1514020929636</id>
+      <id>https://onky-special.myalkena.com/products/1514020929636</id>
       <title>2 kg</title>
       <s:price currency="USD">247.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1514020929636</id>
+      <id>https://onky-special.myalkena.com/products/1514020929636</id>
       <title>500 gm</title>
       <s:price currency="USD">296.00</s:price>
       <s:sku></s:sku>
@@ -537,17 +537,17 @@
     </s:variant>
   </entry>
   <entry>
-    <id>https://onky-special.myshopify.com/products/1513957032036</id>
+    <id>https://onky-special.myalkena.com/products/1513957032036</id>
     <published>2018-11-25T19:23:16-12:00</published>
     <updated>2018-11-25T19:23:16-12:00</updated>
-    <link rel="alternate" type="text/html" href="https://onky-special.myshopify.com/products/minced-piece-pork"/>
+    <link rel="alternate" type="text/html" href="https://onky-special.myalkena.com/products/minced-piece-pork"/>
     <title>Minced Piece Pork</title>
     <s:type>Meat</s:type>
     <s:vendor>Fresho</s:vendor>
     <summary type="html">
       <![CDATA[<table border="0">
   <tr>
-    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0035/4195/8756/products/product2_35136eb5-fa25-4c7f-a115-c5012d4e4838.jpg?v=1543220934"></td>
+    <td width="200"><img width="200" src="https://cdn.alkena.com/s/files/1/0035/4195/8756/products/product2_35136eb5-fa25-4c7f-a115-c5012d4e4838.jpg?v=1543220934"></td>
     <td valign="bottom">
       <p>
 
@@ -555,7 +555,7 @@
         <strong>Type: </strong>Meat<br>
         <strong>Price: </strong>
             247.00 - 296.00
-            <a href="https://onky-special.myshopify.com/products/minced-piece-pork">(2 variants)</a>
+            <a href="https://onky-special.myalkena.com/products/minced-piece-pork">(2 variants)</a>
       </p>
     </td>
   </tr>
@@ -570,14 +570,14 @@
     <s:tag>Fresho</s:tag>
     <s:tag>Meat</s:tag>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1513957032036</id>
+      <id>https://onky-special.myalkena.com/products/1513957032036</id>
       <title>2 kg</title>
       <s:price currency="USD">247.00</s:price>
       <s:sku></s:sku>
       <s:grams>0</s:grams>
     </s:variant>
     <s:variant>
-      <id>https://onky-special.myshopify.com/products/1513957032036</id>
+      <id>https://onky-special.myalkena.com/products/1513957032036</id>
       <title>1 kg</title>
       <s:price currency="USD">296.00</s:price>
       <s:sku></s:sku>

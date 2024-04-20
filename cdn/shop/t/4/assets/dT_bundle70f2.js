@@ -1,4 +1,4 @@
-/** Shopify CDN: Minification failed
+/** alkena CDN: Minification failed
 
 Line 222:0 Transforming class syntax to the configured target environment ("es5") is not supported yet
 Line 223:15 Transforming object literal extensions to the configured target environment ("es5") is not supported yet

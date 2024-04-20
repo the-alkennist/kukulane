@@ -1,4 +1,4 @@
-/** Shopify CDN: Minification failed
+/** alkena CDN: Minification failed
 
 Line 290:0 Transforming const to the configured target environment ("es5") is not supported yet
 Line 312:0 Transforming const to the configured target environment ("es5") is not supported yet
@@ -339,7 +339,7 @@ const dT_AddToCartOther = function(frm) {
 
 		.then((response) => {
 
-			Shopify.moveAlong();
+			alkena.moveAlong();
 
 		})
 
@@ -992,7 +992,7 @@ const loadProductRecommendationsIntoSection = function() {
 
 };
 
-document.addEventListener("shopify:section:load", function(event) {
+document.addEventListener("alkena:section:load", function(event) {
 
     if (event.detail.sectionId === "product-recommendations") {
 
@@ -1558,7 +1558,7 @@ document.addEventListener("shopify:section:load", function(event) {
 
 		event.preventDefault();
 
-		var frmData = $(".shopify-product-form").serialize();
+		var frmData = $(".alkena-product-form").serialize();
 
 		dT_AddToCart(frmData);
 
@@ -1578,7 +1578,7 @@ document.addEventListener("shopify:section:load", function(event) {
 
 
 
-		var frmData = $(".shopify-product-quick-form").serialize();
+		var frmData = $(".alkena-product-quick-form").serialize();
 
 		dT_QuickAddToCart(frmData);
 
@@ -1594,11 +1594,11 @@ document.addEventListener("shopify:section:load", function(event) {
 
 
 
-		const setShopifyQue = function() {
+		const setalkenaQue = function() {
 
-			Shopify.queue = [];
+			alkena.queue = [];
 
-			Shopify.isBundleDiscount = true;
+			alkena.isBundleDiscount = true;
 
 
 
@@ -1614,7 +1614,7 @@ document.addEventListener("shopify:section:load", function(event) {
 
 				if (productVarientId != '' && $('#bundle_chk_' + productId).is(":checked")) {
 
-					Shopify.queue.push({
+					alkena.queue.push({
 
 						variantId: productVarientId,
 
@@ -1622,7 +1622,7 @@ document.addEventListener("shopify:section:load", function(event) {
 
 				} else {
 
-					Shopify.isBundleDiscount = false;
+					alkena.isBundleDiscount = false;
 
 				}
 
@@ -1638,7 +1638,7 @@ document.addEventListener("shopify:section:load", function(event) {
 
 
 
-			if (Shopify.isBundleDiscount == true) {
+			if (alkena.isBundleDiscount == true) {
 
 				axios.get('/discount/' + discount_code, {})
 
@@ -1656,13 +1656,13 @@ document.addEventListener("shopify:section:load", function(event) {
 
 		const doBundleAddToCart = function() {
 
-			setShopifyQue();
+			setalkenaQue();
 
-			Shopify.moveAlong = function() {
+			alkena.moveAlong = function() {
 
-				if (Shopify.queue.length) {
+				if (alkena.queue.length) {
 
-					var request = Shopify.queue.shift();
+					var request = alkena.queue.shift();
 
 
 
@@ -1682,7 +1682,7 @@ document.addEventListener("shopify:section:load", function(event) {
 
 
 
-			Shopify.moveAlong();
+			alkena.moveAlong();
 
 		};
 
