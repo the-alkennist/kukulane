@@ -3253,8 +3253,6 @@ top-level-link
                             refreshAccessToken(retryFunction);
                           } else {
                             showError('Failed: ' + error);
-                            toastr.info('Please login or create an account first. Select the person icon, and click on login or register');
-
                           }
                         }
 
@@ -3286,8 +3284,6 @@ top-level-link
                             },
                             error: function (xhr, status, error) {
                               console.error("Failed to refresh token:", error);
-                            toastr.info('Please login or create an account first. Select the person icon, and click on login or register');
-
                               // Handle error refreshing token
                               // toastr.error("Failed to refresh token. Please login again.");
                             },
