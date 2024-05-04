@@ -6,6 +6,8 @@ $(document).ready(function () {
         // Check if access token is available
         if (!accessToken) {
             console.error("Access token not found.");
+            $("#CartContainer").html("<p>Please login first.</p>");
+           
             // Handle the case where access token is not available
             // toastr.info("Please login to access your cart");
             return;

@@ -3101,48 +3101,51 @@ top-level-link
 
 
                         // Event listener for "Add to Cart" button click
-                        $('.AddToCart.btn').on('click', function (event) {
-                          event.preventDefault(); // Prevent the default form submission
+                        // Event listener for "Add to Cart" button click
+    $('.AddToCart.btn').on('click', function (event) {
+        event.preventDefault(); // Prevent the default form submission
 
-                          // Get the parent li element of the clicked button
-                          var parentLi = $(this).closest('li');
+        // Get the parent li element of the clicked button
+        var parentLi = $(this).closest('li');
 
-                          // Get product name and price from the parent li element
-                          var productName = parentLi.find('.grid-link__title a').text().trim();
-                          var productPrice = parentLi.find('.product_price .grid-link__org_price').text().trim();
+        // Get product name and price from the parent li element
+        var productName = parentLi.find('.grid-link__title a').text().trim();
+        var productPrice = parentLi.find('.product_price .grid-link__org_price').text().trim();
+        var confirmButton = parentLi.find('.confirm-button');
 
-                          // Replace the button with a quantity input field
-                          // Create a unique ID for the quantity input field
-                          var uniqueId = productName.replace(/\s+/g, '') + 'quantity';
+        // Replace the button with a quantity input field
+        // Create a unique ID for the quantity input field
+        var uniqueId = productName.replace(/\s+/g, '') + 'quantity';
 
-                          // Replace the button with a quantity input field
-                          $(this).replaceWith('<input type="number" id="' + uniqueId + '" class="quantity-input" min="1" placeholder="Enter Quantity" required>');
-                          $('.confirm-button').show();
-                          // Focus on the newly created quantity input field
-                          $('#' + uniqueId).focus();
+        // Replace the button with a quantity input field
+        $(this).replaceWith('<input type="number" id="' + uniqueId + '" class="quantity-input" min="1" placeholder="Enter Quantity" required>');
 
+        // Show the confirmation button only for this specific li
+        confirmButton.show();
 
-                          // Store a reference to the button element
-                          var addButton = $(this);
+        // Focus on the newly created quantity input field
+        $('#' + uniqueId).focus();
 
-                          // Event listener for confirmation button (if applicable)
-                          $('.confirm-button').on('click', function () {
-                            // Get the quantity value
-                            var quantity = parseInt($('.quantity-input').val());
+        // Store a reference to the button element
+        var addButton = $(this);
 
-                            // If the quantity is valid (greater than 0)
-                            if (quantity > 0) {
-                              $(this).replaceWith('<div class="spinner-border text-primary" role="status" style="color: white;"><span class="visually-hidden">Loading...</span></div>');
+        // Event listener for confirmation button (if applicable)
+        confirmButton.on('click', function () {
+            // Get the quantity value
+            var quantity = parseInt($('#' + uniqueId).val());
 
-                              // Create the product
-                              createProduct(productName, productPrice, quantity, addButton);
-                            } else {
-                              // If the quantity is not valid, display an error message or take appropriate action
-                              showError('Please enter a valid quantity.');
-                            }
-                          });
-                        });
+            // If the quantity is valid (greater than 0)
+            if (quantity > 0) {
+                $(this).replaceWith('<div class="spinner-border text-primary" role="status" style="color: orange;"><span class="visually-hidden">Loading...</span></div>');
 
+                // Create the product
+                createProduct(productName, productPrice, quantity, addButton);
+            } else {
+                // If the quantity is not valid, display an error message or take appropriate action
+                showError('Please enter a valid quantity.');
+            }
+        });
+    });
                         // Function to create product and add to cart
                         function createProduct(productName, productPrice, quantity, addButton) {
                           // Get product seller
