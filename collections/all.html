@@ -2357,6 +2357,7 @@ showError('Please enter a valid quantity.');
                 } else {
                   // Display error message for other types of errors
                   toastr.error('Failed to create product: ' + error);
+                  $('#bigtimespinner').hide();
 
                 }
               }
@@ -2397,6 +2398,7 @@ showError('Please enter a valid quantity.');
               // Replace the input field with the button
               $('#' + uniqueId).replaceWith('<button class="AddToCart btn">Add To Cart</button>');
               $('.confirm-button').hide();
+              $('#bigtimespinner').hide();
               setTimeout(function () {
                 toastr.clear();
               }, 1000);
@@ -2418,6 +2420,8 @@ showError('Please enter a valid quantity.');
             refreshAccessToken(retryFunction);
           } else {
             showError('Failed: ' + error);
+            $('#bigtimespinner').hide();
+            
             toastr.info('Please login or create an account first. Select the person icon, and click on login or register');$('#' + uniqueId).replaceWith('<button class="AddToCart btn">Add To Cart</button>');
               
           }
@@ -2431,7 +2435,7 @@ showError('Please enter a valid quantity.');
           if (!refreshToken) {
             console.error("Refresh token not found.");
             toastr.info('Please login or create an account first. Select the person icon, and click on login or register');
-            
+            $('#bigtimespinner').hide();
             // Handle the case where refresh token is not available
             // toastr.info("Please login to refresh your token");
             return;
@@ -2451,6 +2455,7 @@ showError('Please enter a valid quantity.');
             },
             error: function (xhr, status, error) {
               console.error("Failed to refresh token:", error);
+              $('#bigtimespinner').hide();
             toastr.info('Please login or create an account first. Select the person icon, and click on login or register');
 
               // Handle error refreshing token
