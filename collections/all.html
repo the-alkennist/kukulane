@@ -2241,7 +2241,7 @@ Contact Us
     <script>
       $(document).ready(function () {
         // Function to get access token from local storage
-
+      let uniqueId;
         function getAccessToken() {
           return localStorage.getItem('access_token');
         }
@@ -2274,7 +2274,7 @@ var confirmButton = parentLi.find('.confirm-button');
 
 // Replace the button with a quantity input field
 // Create a unique ID for the quantity input field
-var uniqueId = productName.replace(/\s+/g, '') + 'quantity';
+uniqueId = productName.replace(/\s+/g, '') + 'quantity';
 
 // Replace the button with a quantity input field
 $(this).replaceWith('<input type="number" id="' + uniqueId + '" class="quantity-input" min="1" placeholder="Enter Quantity" required>');
@@ -2420,6 +2420,8 @@ showError('Please enter a valid quantity.');
             refreshAccessToken(retryFunction);
           } else {
             showError('Failed: ' + error);
+            $('#' + uniqueId).replaceWith('<button class="AddToCart btn">Add To Cart</button>');
+              
             $('#bigtimespinner').hide();
             
             toastr.info('Please login or create an account first. Select the person icon, and click on login or register');$('#' + uniqueId).replaceWith('<button class="AddToCart btn">Add To Cart</button>');
@@ -2436,6 +2438,8 @@ showError('Please enter a valid quantity.');
             console.error("Refresh token not found.");
             toastr.info('Please login or create an account first. Select the person icon, and click on login or register');
             $('#bigtimespinner').hide();
+            $('#' + uniqueId).replaceWith('<button class="AddToCart btn">Add To Cart</button>');
+             
             // Handle the case where refresh token is not available
             // toastr.info("Please login to refresh your token");
             return;
@@ -2455,6 +2459,8 @@ showError('Please enter a valid quantity.');
             },
             error: function (xhr, status, error) {
               console.error("Failed to refresh token:", error);
+              $('#' + uniqueId).replaceWith('<button class="AddToCart btn">Add To Cart</button>');
+             
               $('#bigtimespinner').hide();
             toastr.info('Please login or create an account first. Select the person icon, and click on login or register');
 
