@@ -31,8 +31,18 @@ $(document).ready(function () {
     // Function to handle successful orders response
     function handleOrdersResponse(response) {
         // Clear previous cart content
-        var orderID = response[0].id;
-        localStorage.setItem('order_id', orderID);
+        if (response.length > 0) {
+            var orderID = response[0].id;
+            // Do something with orderID
+            localStorage.setItem('order_id', orderID);
+        } else {
+            // Handle case where response is empty
+            console.error("Response is empty");
+            $("#CartContainer").html(
+                "<p>Your cart is empty. Go to shop</p>"
+            );
+        }
+        
         $("#CartContainer").empty();
         $("#CartTotal").empty();
 
