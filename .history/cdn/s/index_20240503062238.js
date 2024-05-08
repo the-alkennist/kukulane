@@ -7,7 +7,7 @@ $(document).ready(function () {
 
         // Make a POST request to the refresh token endpoint
         $.ajax({
-            url: "https://ksdfj-production.up.railway.app/api/token/refresh/",
+            url: "http://127.0.0.1:8000/api/token/refresh/",
             method: 'POST',
             headers: {
                 "Authorization": "Bearer " + refreshToken
@@ -37,7 +37,7 @@ $(document).ready(function () {
 
         // Make a GET request to fetch user's profile
         $.ajax({
-            url: "https://ksdfj-production.up.railway.app/api/user/profile/",
+            url: "http://127.0.0.1:8000/api/user/profile/",
             type: "GET",
             headers: {
                 "Authorization": "Bearer " + accessToken
@@ -69,7 +69,7 @@ $(document).ready(function () {
 
         // Make a POST request to logout endpoint
         $.ajax({
-            url: "https://ksdfj-production.up.railway.app/logout/",
+            url: "http://127.0.0.1:8000/logout/",
             method: 'POST',
             headers: {
                 "Authorization": "Bearer " + accessToken

@@ -5,16 +5,16 @@ $(document).ready(function () {
 
         // Check if access token is available
         if (!accessToken) {
+            refreshAccessToken();
             console.error("Access token not found.");
-            $("#CartContainer").html("<p>Please login first.</p>");
            
             // Handle the case where access token is not available
-            // toastr.info("Please login to access your cart");
-            return;
+           // toastr.info("Please login to access your cart");
+            
         }
 
         $.ajax({
-            url: "https://ksdfj-production.up.railway.app/api/user/orders/",
+            url: "http://127.0.0.1:8000/api/user/orders/",
             type: "GET",
             headers: {
                 Authorization: "Bearer " + accessToken,
@@ -31,6 +31,8 @@ $(document).ready(function () {
     // Function to handle successful orders response
     function handleOrdersResponse(response) {
         // Clear previous cart content
+        var orderID = response[0].id;
+        localStorage.setItem('order_id', orderID);
         $("#CartContainer").empty();
         $("#CartTotal").empty();
 
@@ -97,11 +99,13 @@ $(document).ready(function () {
             console.error("Refresh token not found.");
             // Handle the case where refresh token is not available
             // toastr.info("Please login to refresh your token");
+            $("#CartContainer").html("<p>Please login first.</p>");
+
             return;
         }
 
         $.ajax({
-            url: "https://ksdfj-production.up.railway.app/api/token/refresh/",
+            url: "http://127.0.0.1:8000/api/token/refresh/",
             type: "POST",
             data: {
                 refresh: refreshToken,
@@ -115,6 +119,8 @@ $(document).ready(function () {
             error: function (xhr, status, error) {
                 console.error("Failed to refresh token:", error);
                 // Handle error refreshing token
+            $("#CartContainer").html("<p>Please login first.</p>");
+
                 // toastr.error("Failed to refresh token. Please login again.");
             },
         });
@@ -133,7 +139,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: "https://ksdfj-production.up.railway.app/api/user/orders/" + orderId + "/",
+            url: "http://127.0.0.1:8000/api/user/orders/" + orderId + "/",
             type: "DELETE",
             headers: {
                 Authorization: "Bearer " + accessToken,

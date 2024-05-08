@@ -7,7 +7,7 @@ $(document).ready(function() {
 
         // Make a POST request to logout endpoint
         $.ajax({
-            url: "https://ksdfj-production.up.railway.app/logout/", // Ensure the URL is correct
+            url: "http://127.0.0.1:8000/logout/", // Ensure the URL is correct
             method: 'POST', // Specify the HTTP method
             headers: {
                 "Authorization": "Bearer " + accessToken
@@ -38,7 +38,7 @@ $(document).ready(function () {
    
     // Make a GET request to fetch user's profile
     $.ajax({
-        url: "https://ksdfj-production.up.railway.app/api/user/profile/",
+        url: "http://127.0.0.1:8000/api/user/profile/",
         type: "GET",
         headers: {
             "Authorization": "Bearer " + accessToken

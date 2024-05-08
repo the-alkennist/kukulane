@@ -1817,7 +1817,7 @@ Contact Us
           
                       // Send product information to create product endpoint
                       $.ajax({
-                          url: 'https://ksdfj-production.up.railway.app/api/products/',
+                          url: 'http://127.0.0.1:8000/api/products/',
                           type: 'POST',
                           contentType: 'application/json',
                           data: JSON.stringify(product),
@@ -1848,7 +1848,7 @@ Contact Us
           
                       // Send order item information to add to cart endpoint
                       $.ajax({
-                          url: 'https://ksdfj-production.up.railway.app/api/user/orders/{order_id}/order-items/',
+                          url: 'http://127.0.0.1:8000/api/user/orders/{order_id}/order-items/',
                           type: 'POST',
                           contentType: 'application/json',
                           data: JSON.stringify(orderItem),

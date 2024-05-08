@@ -3188,7 +3188,7 @@ top-level-link
 
                           // Send product information to create product endpoint
                           $.ajax({
-                            url: 'https://ksdfj-production.up.railway.app/api/products/',
+                            url: 'http://127.0.0.1:8000/api/products/',
                             type: 'POST',
                             contentType: 'application/json',
                             data: JSON.stringify(product),
@@ -3242,7 +3242,7 @@ top-level-link
 
                           // Send order information to add to cart endpoint
                           $.ajax({
-                            url: 'https://ksdfj-production.up.railway.app/api/user/orders/',
+                            url: 'http://127.0.0.1:8000/api/user/orders/',
                             type: 'POST',
                             contentType: 'application/json',
                             data: JSON.stringify(order),

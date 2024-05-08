@@ -13,7 +13,7 @@ $(document).ready(function () {
     console.error("Access token found.");
 
     $.ajax({
-      url: "https://ksdfj-production.up.railway.app/api/user/orders/", // Update with your API endpoint
+      url: "http://127.0.0.1:8000/api/user/orders/", // Update with your API endpoint
       type: "GET",
       headers: {
         Authorization: "Bearer " + accessToken, // Include access token in the request headers
