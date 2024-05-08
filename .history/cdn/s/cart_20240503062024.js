@@ -12,7 +12,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: "http://127.0.0.1:8000/api/user/orders/",
+            url: "https://ksdfj-kb97.onrender.com/api/user/orders/",
             type: "GET",
             headers: {
                 Authorization: "Bearer " + accessToken,
@@ -99,7 +99,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: "http://127.0.0.1:8000/api/token/refresh/",
+            url: "https://ksdfj-kb97.onrender.com/api/token/refresh/",
             type: "POST",
             data: {
                 refresh: refreshToken,
@@ -131,7 +131,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: "http://127.0.0.1:8000/api/user/orders/" + orderId + "/",
+            url: "https://ksdfj-kb97.onrender.com/api/user/orders/" + orderId + "/",
             type: "DELETE",
             headers: {
                 Authorization: "Bearer " + accessToken,

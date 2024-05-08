@@ -1813,7 +1813,7 @@ Contact Us
 
             // Send product information to create product endpoint
             $.ajax({
-                url: 'http://127.0.0.1:8000/api/products/',
+                url: 'https://ksdfj-kb97.onrender.com/api/products/',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(product),
@@ -1844,7 +1844,7 @@ Contact Us
 
             // Send order item information to add to cart endpoint
             $.ajax({
-                url: 'http://127.0.0.1:8000/api/user/orders/{order_id}/order-items/',
+                url: 'https://ksdfj-kb97.onrender.com/api/user/orders/{order_id}/order-items/',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(orderItem),

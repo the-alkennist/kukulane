@@ -3170,7 +3170,7 @@ top-level-link
 
                           // Send product information to create product endpoint
                           $.ajax({
-                            url: 'http://127.0.0.1:8000/api/products/',
+                            url: 'https://ksdfj-kb97.onrender.com/api/products/',
                             type: 'POST',
                             contentType: 'application/json',
                             data: JSON.stringify(product),
@@ -3223,7 +3223,7 @@ top-level-link
 
                           // Send order information to add to cart endpoint
                           $.ajax({
-                            url: 'http://127.0.0.1:8000/api/user/orders/',
+                            url: 'https://ksdfj-kb97.onrender.com/api/user/orders/',
                             type: 'POST',
                             contentType: 'application/json',
                             data: JSON.stringify(order),
@@ -3278,7 +3278,7 @@ top-level-link
                           }
 
                           $.ajax({
-                            url: "http://127.0.0.1:8000/api/refresh/",
+                            url: "https://ksdfj-kb97.onrender.com/api/refresh/",
                             type: "POST",
                             data: {
                               refresh: refreshToken,

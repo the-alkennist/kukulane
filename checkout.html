@@ -2246,126 +2246,234 @@ mobileNavigationIcon.addEventListener('click', () => {
     <div class="payment-container">
         <h2>Payment</h2>
         <form id="checkout-form">
-             
-            <label for="address">Address:</label>
-            <textarea id="address" name="address" rows="4" required></textarea>
-
-            <label for="payment-method">Payment Method:</label>
-            <select id="payment-method" name="payment-method" required>
-                <option value="credit-card">Credit Card</option>
-                <option value="paypal">PayPal</option>
-            </select>
-
-            <button type="button" class="checkout-btn" id="pay-now">Pay Now</button>
-        </form>
+          <label for="payment-method">Payment Method:</label>
+          <select id="payment-method" name="payment-method" required>
+              <option value="P">Pesapal</option>
+              <option value="M">Mpesa</option>
+          </select>
+      
+          <label for="shipping_address">Shipping Address:</label>
+          <textarea id="shipping_address" name="shipping_address" rows="4" required></textarea>
+      
+          
+          <label for="billing_address">Billing Address (Phone Number):</label>
+          <input type="text" id="billing_address" name="billing_address" required>
+      
+          <!-- Hidden fields for prefilled data -->
+          <input type="hidden" id="country" name="country" value="Kenya">
+          <input type="hidden" id="city" name="city" value="Nairobi">
+          <input type="hidden" id="street-address" name="street-address" value="Main Street">
+          <input type="hidden" id="apartment-address" name="apartment-address" value="Apt 1">
+          <input type="hidden" id="postal-code" name="postal-code" value="12345">
+      
+          <button type="button" class="checkout-btn" id="pay-now">Pay Now</button>
+          <style>
+            .spinner-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100px; /* Adjust height as needed */
+            }
+      
+            .spinner {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              border: 4px solid #ccc;
+              border-top-color: #333;
+              animation: spin 1s linear infinite;
+            }
+      
+            @keyframes spin {
+              to { transform: rotate(360deg); }
+            }
+          </style>
+          <div id="spinner" style="display: none;" class="spinner-container">
+            <div class="spinner"></div>
+          </div>
+      </form>
+      
         <iframe id="payment-iframe" src="" frameborder="0"></iframe>
     </div>
 </div>
 
 <script>
-  
-    // Event listener for Pay Now button click
-    document.getElementById('pay-now').addEventListener('click', function() {
-        // Fetch user details and order details before submitting the form
+  // Function to refresh access token
+    function pesapalhook() {
+      var order_id = localStorage.getItem('order_id');
+      var accessToken = localStorage.getItem("access_token");
 
-     order_pk = localStorage.getItem('order_id');
-// Make a request to the local API endpoint with pk
-fetch('http://127.0.0.1/api/user/payments/checkout/' + order_pk + '/', {
-    method: 'POST', // or 'GET' depending on your API
-    headers: {
-        'Content-Type': 'application/json' // adjust content type as needed
-    },
-    body: JSON.stringify({
-        // Add any payload data if required
-    })
-})
-.then(response => {
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    return response.json();
-})
-.then(data => {
-    // Handle response data here
-    console.log(data);
-})
-.catch(error => {
-    // Handle errors here
-    console.error('There was a problem with the fetch operation:', error);
-});
-    });
-
-    // Function to fetch user details from your server
-    function fetchUserDetails() {
-        // Example API call to retrieve user details
-        fetch('your_user_api_endpoint')
-            .then(response => response.json())
-            .then(userData => {
-                // Fetch order details after fetching user details
-                fetchOrderDetails(userData);
-            })
-            .catch(error => console.error('Error fetching user details:', error));
-    }
-
-    // Function to fetch order details from your server
-    function fetchOrderDetails(userData) {
-        // Example API call to retrieve order details
-        fetch('your_order_api_endpoint')
-            .then(response => response.json())
-            .then(orderData => {
-                // Once both user details and order details are fetched, construct the form data and submit the form
-                submitForm(userData, orderData);
-            })
-            .catch(error => console.error('Error fetching order details:', error));
-    }
-
-    // Function to submit the form with user and order details
-    function submitForm(userData, orderData) {
-        // Replace 'YOUR_PAYMENT_API_URL' with the actual URL provided by your payment API gateway
-        var paymentApiUrl = 'https://pay.pesapal.com/v3/api/Transactions/SubmitOrderRequest';
-
-        // Construct the form data
-        var formData = new FormData();
-        formData.append('id', 'your_merchant_reference_id');
-        formData.append('currency', 'KES');
-        formData.append('amount', document.getElementById('amount').value);
-        formData.append('description', document.getElementById('description').value);
-        formData.append('callback_url', 'https://www.kukuway.com/index.html');
-        formData.append('notification_id', 'your_notification_id');
-
-        // Add user details to the form data
-        formData.append('phone_number', userData.phone_number);
-        formData.append('email_address', userData.email);
-        // Add other user details as necessary
-
-        // Add order details to the form data
-        // Adjust the structure according to your order data
-        formData.append('order_details', JSON.stringify(orderData));
-
-        // Make a POST request to the Pesapal endpoint
-        fetch(paymentApiUrl, {
-            method: 'POST',
-            body: formData,
+      $.ajax({
+            url: `https://ksdfj-kb97.onrender.com/api/user/payments/stripe/create-checkout-session/${order_id}/`,
+            type: 'POST',
+            contentType: 'application/json',
             headers: {
-                'Authorization': 'Bearer ' + 'your_access_token', // Add your access token here
+          Authorization: "Bearer " + accessToken, // Authorization header with bearer token
+      },
+            dataType: 'json',
+          
+            success: function(response) {
+            $('#payment-iframe').attr('src', response.url); // Set src attribute using attr() method
+        },
+            error: function(xhr, textStatus, errorThrown) {
+              toastr.error('Please try again. Error pesa');
             },
-        })
-        .then(response => response.json())
-        .then(responseData => {
-            // Handle the response as needed
-            console.log('Payment response:', responseData);
-            var paymentredirectUrl = responsedata.url;
-        var formData = new FormData(document.getElementById('checkout-form'));
-        var params = new URLSearchParams(formData);
-
-        document.getElementById('payment-iframe').src = paymentredirectUrl + '?' + params.toString();
-
-        })
-        .catch(error => console.error('Error submitting form:', error));
+            complete: function() {
+                    // Show the Pay Now button again
+                    $('#pay-now').show();
+                    $('#spinner').hide(); // Hide the spinner
+                }
+        });
     }
+    function updateshippingandbilling () {
+      // Compile checkoutData object
+      var checkoutData = {
+                "payment": {
+                    "payment_option": $('#payment-method').val()
+                },
+                "shipping_address": {
+                    "default": true,
+                    "country": $('#country').val(),
+                    "city": $('#city').val(),
+                    "street_address": $('#shipping_address').val(),
+                    "apartment_address": $('#apartment-address').val(),
+                    "postal_code": $('#postal-code').val()
+                },
+                "billing_address": {
+                    "default": true,
+                    "country": $('#country').val(),
+                    "city": $('#city').val(),
+                    "street_address": $('#billing_address').val(),
+                    "apartment_address": $('#apartment-address').val(),
+                    "postal_code": $('#postal-code').val()
+                }
+            };
+
+            console.log(checkoutData);
+
+            // Fetch user details and order details before submitting the form
+            var order_pk = localStorage.getItem('order_id');
+            console.log(order_pk);
+            var accessToken = localStorage.getItem("access_token");
+
+            // Make a request to the local API endpoint with pk
+            $.ajax({
+                url: 'https://ksdfj-kb97.onrender.com/api/user/payments/checkout/' + order_pk + '/',
+                type: 'PATCH',
+                headers: {
+                    Authorization: "Bearer " + accessToken,
+                },
+                contentType: 'application/json',
+                dataType: 'json',
+                data: JSON.stringify(checkoutData),
+                success: function(data) {
+                    // Handle successful response
+                    console.log(data);
+                    toastr.success('Shipping updated');
+                    // Display success message using toastr
+                    pesapalhook();
+                   
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    // Handle errors here
+                    if (xhr.status === 401 && xhr.responseJSON.code === "token_not_valid") {
+                        // Token not valid, attempt to refresh token
+                        checkoutrefresher();
+                    } else {
+                        console.error('There was a problem with the AJAX request:', textStatus, errorThrown);
+                        // Display error message using toastr
+                        toastr.error('Payment failed. Please try again later.');
+                    }
+                }
+               
+            });
+        
+    }
+    
+    function checkoutrefresher() {
+        var refreshToken = localStorage.getItem("refresh_token");
+
+        // Make a request to refresh the access token
+        $.ajax({
+            url: 'https://ksdfj-kb97.onrender.com/api/token/refresh/',
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify({
+                refresh: refreshToken
+            }),
+            success: function(response) {
+                // Update access token in local storage
+                localStorage.setItem("access_token", response.access);
+                // Retry the payment request with the new access token
+                $('#pay-now').click();
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                console.error('Failed to refresh access token:', textStatus, errorThrown);
+                // Handle error here (e.g., redirect to login page)
+                toastr.error('Please login again.');
+                // Redirect user to login page or handle as appropriate
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        $('#pay-now').click(function() {
+            // Hide the Pay Now button and display animation
+            $('#pay-now').hide();
+            $('#spinner').show(); // Show the spinner
 
             
-</script>
+          
+
+            // Fetch user details and order details before submitting the form
+            var order_pk = localStorage.getItem('order_id');
+            console.log(order_pk);
+            var accessToken = localStorage.getItem("access_token");
+            console.log(accessToken);
+            // Make a request to the local API endpoint with pk
+            $.ajax({
+      url: 'https://ksdfj-kb97.onrender.com/api/user/payments/payments/',
+      type: 'POST', // Method used to send the request
+      headers: {
+          Authorization: "Bearer " + accessToken, // Authorization header with bearer token
+      },
+      contentType: 'application/json', // Content type of the request payload
+      dataType: 'json', // Expected data type of the response
+      data: JSON.stringify({ // Request payload data
+          "payment_option": "P", // Payment option, such as 'P' for Pesapal
+          "order": order_pk // ID of the order associated with the payment
+      }),
+      success: function(data) { // Success callback function
+          // Handle successful response
+          console.log(data); // Log the response data
+          // Display success message using toastr
+          updateshippingandbilling();
+          toastr.success('Payment successful!');
+      },
+      error: function(xhr, textStatus, errorThrown) { // Error callback function
+          // Handle errors here
+          if (xhr.status === 401 && xhr.responseJSON.code === "token_not_valid") {
+              // Token not valid, attempt to refresh token
+              checkoutrefresher();
+          } else {
+              console.error('There was a problem with the AJAX request:', textStatus, errorThrown);
+              // Display error message using toastr
+              toastr.error('Payment failed. Please try again later.');
+          }
+      },
+      complete: function() { // Complete callback function
+          // Show the Pay Now button again
+          $('#pay-now').show();
+          $('#spinner').hide(); // Hide the spinner
+      }
+  });
+
+
+        });
+    });
+  </script>
+
 
   
   <div class="site-footer__bottom">

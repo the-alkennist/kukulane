@@ -8,7 +8,7 @@ function refreshTokenAndRetry(originalRequest) {
 
     // Make a POST request to the refresh token endpoint
     $.ajax({
-        url: "http://127.0.0.1:8000/api/token/refresh/",
+        url: "https://ksdfj-kb97.onrender.com/api/token/refresh/",
         method: 'POST',
         contentType: 'application/json', // Specify content type as JSON
         data: JSON.stringify({ refresh: refreshToken }), // Include refresh token in request body
@@ -38,7 +38,7 @@ function refreshTokenAndRetry(originalRequest) {
 
         // Make a GET request to fetch user's profile
         $.ajax({
-            url: "http://127.0.0.1:8000/api/user/profile/",
+            url: "https://ksdfj-kb97.onrender.com/api/user/profile/",
             type: "GET",
             headers: {
                 "Authorization": "Bearer " + accessToken
@@ -70,7 +70,7 @@ function refreshTokenAndRetry(originalRequest) {
 
         // Make a POST request to logout endpoint
         $.ajax({
-            url: "http://127.0.0.1:8000/logout/",
+            url: "https://ksdfj-kb97.onrender.com/logout/",
             method: 'POST',
             headers: {
                 "Authorization": "Bearer " + refreshToken
