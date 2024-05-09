@@ -30,6 +30,8 @@
   <meta property="og:image:height" content="628"><meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Account">
 <meta name="twitter:description" content="Kuku~Way-special ">
+<meta name="google-signin-client_id" content="807149424213-8e3v5147cr2muvvf8607aiik2qvdr6bm.apps.googleusercontent.com"> 
+
     
     <!-- CSS  -->
     <link href="../cdn/shop/t/4/assets/dt-framework7286.css?v=18711646062043825491661753424" rel="stylesheet" type="text/css" media="all" />  
@@ -58,6 +60,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
     integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
    
 </head>
   <body id="account" class="template-customers-login  others ">
@@ -1591,6 +1594,7 @@
       <div class="note form-success" id="ResetSuccess" style="display:none;">
         We&#39;ve sent you an email with a link to update your password.
       </div>
+      <div class="g-signin2" data-onsuccess="onSignIn">Sign in with Google</div>
 
       <div id="CustomerLoginForm">
         <form method="post" id="customer_login" accept-charset="UTF-8" data-login-with-shop-sign-in="true" class="customer_login"><input type="hidden" name="form_type" value="customer_login" /><input type="hidden" name="utf8" value="✓" />
@@ -1662,6 +1666,15 @@
 
 </div>
 <script>
+  document.addEventListener("DOMContentLoaded", function() {
+
+  function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
   document.getElementById("customer_login").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the form from submitting normally
     document.getElementById("spinner").style.display = "block";
@@ -1717,7 +1730,7 @@
     };
     xhr.send(JSON.stringify(formData)); // Send JSON data to obtain the token
 });
-
+});
 </script>
 <script>  
   function showRecoverPasswordForm() {
