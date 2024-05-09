@@ -1468,16 +1468,20 @@
         <input type="password" name="password2" id="ConfirmPassword" placeholder="Confirm Password" >
 
         <div class="dt-sc-btn-group">
-          <input  type="submit" value="Create" class="dt-sc-btn">
+          <input  id="registerbtn" type="submit" value="Create" class="dt-sc-btn">
           <a class="dt-sc-btn" href="../index.html">Return to Store</a>
         </div>
         </form>
-        
+               <!-- Add a spinner element -->
+<div id="spinner" style="display: none; width: 70px; height: 70px; margin: 100px auto; border-radius: 50%; animation: spin 0.7s linear infinite;"> Loading....</div>
+
       </div>
       <script>
         document.getElementById("create_customer").addEventListener("submit", function(event) {
           event.preventDefault(); // Prevent the form from submitting normally
-      
+          document.getElementById("spinner").style.display = "block";
+                document.getElementById("registerbtn").style.display = "none";
+
           var form = this;
           var formData = {
             first_name: form.elements["first_name"].value,
@@ -1502,6 +1506,9 @@
                 // Success callback
                 console.log("Registration successful");
                 // You can add further actions here, such as redirecting the user or showing a success message
+                document.getElementById("spinner").style.display = "none";
+                document.getElementById("registerbtn").style.display = "block";
+
                 window.location.href = "../index.html";
           // toastr.success('Logged in successfully');
 
@@ -1511,6 +1518,9 @@
                 // Success callback
                 console.log("Registration successful");
                 // You can add further actions here, such as redirecting the user or showing a success message
+                document.getElementById("spinner").style.display = "none";
+                document.getElementById("registerbtn").style.display = "block";
+
                 window.location.href = "../index.html";
           // toastr.success('Logged in successfully');
 
@@ -1521,6 +1531,9 @@
                 console.error("Registration failed");
                
                 toastr.info('Registration failed');
+                document.getElementById("spinner").style.display = "none";
+                document.getElementById("registerbtn").style.display = "block";
+
 
         
                 // Handle error scenario, such as showing an error message to the user

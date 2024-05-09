@@ -1607,8 +1607,11 @@
         
 
         <p>
-          <input type="submit" class="btn" value="Sign In">
+          <input id="signinbtn" type="submit" class="btn" value="Sign In">
         </p>
+        <!-- Add a spinner element -->
+<div id="spinner" style="display: none; width: 70px; height: 70px; margin: 100px auto; border-radius: 50%; animation: spin 0.7s linear infinite;"> Loading....</div>
+
         <div class="link-wrapper">
           
           <p>
@@ -1661,7 +1664,9 @@
 <script>
   document.getElementById("customer_login").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the form from submitting normally
-
+    document.getElementById("spinner").style.display = "block";
+    document.getElementById("signinbtn").style.display = "none";
+    
     var form = this;
     var formData = {
         
@@ -1693,13 +1698,19 @@
                 // Store the access token in local storage
                 localStorage.setItem('access_token', accessToken);
                 localStorage.setItem('refresh_token', refreshToken);
+                document.getElementById("spinner").style.display = "none";
+                document.getElementById("signinbtn").style.display = "block";
 
                 // Now that we have the token, you can redirect the user to another page
                 window.location.href = "../index.html";
+
                 toastr.success('Logged in successfully');
             } else {
                 // Error obtaining token
                 console.error("Error obtaining token");
+                document.getElementById("spinner").style.display = "none";
+                document.getElementById("signinbtn").style.display = "block";
+
                 toastr.error('Please try again');
             }
         }
