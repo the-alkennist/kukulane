@@ -1324,7 +1324,7 @@ mobileNavigationIcon.addEventListener('click', () => {
   </div>
   </form> 
    
-  <a href="cart.html" class="fa fa-shopping-bag site-header__cart-toggle js-drawer-open-right dT_MiniCartModelBtn" aria-controls="CartDrawer" aria-expanded="false"  id="cart-number">
+  <a href="" id="letscartit" class="fa fa-shopping-bag site-header__cart-toggle js-drawer-open-right dT_MiniCartModelBtn" aria-controls="CartDrawer" aria-expanded="false"  id="cart-number">
  <!--   <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 100 100" xml:space="preserve" >
 <g>
@@ -2238,25 +2238,20 @@ mobileNavigationIcon.addEventListener('click', () => {
 
 
 <div class="container">
-    <div class="products-container">
-        <h2>Products</h2>
-        <div id="CartContainer"> <div id ="CartTotal"></div>
-        <!-- Product list goes here -->
-    </div>
+    
     <div class="payment-container">
+      <p>Click on the shopping cart at the top right to confirm your cart before payment.</p>
         <h2>Payment</h2>
         <form id="checkout-form">
-          <label for="payment-method">Payment Method:</label>
-          <select id="payment-method" name="payment-method" required>
-              <option value="P">Pesapal</option>
-              <option value="M">Mpesa</option>
-          </select>
+          
+          <input type="hidden" id="payment-method" name="payment-method" value="P">
+          
       
-          <label for="shipping_address">Shipping Address:</label>
+          <label for="shipping_address"> Enter your shipping Address:</label>
           <textarea id="shipping_address" name="shipping_address" rows="4" required></textarea>
       
           
-          <label for="billing_address">Billing Address (Phone Number):</label>
+          <label for="billing_address">Contact Phone Number:</label>
           <input type="text" id="billing_address" name="billing_address" required>
       
           <!-- Hidden fields for prefilled data -->
@@ -2482,10 +2477,8 @@ mobileNavigationIcon.addEventListener('click', () => {
         <div class="dt-sc-flex-space-between copyright">
           
           <div class="footer__copyright">
-            <p>&copy; 2024 Kuku~Way-special 
-              
-               <a  href="#" target="_blank"> 
-              Design Themes 
+            <p>&copy; Kukuway is designed, developed and deployed by <a href="https://alkena.site/" target="_blank"> 
+              AlkenaCode Creations 
               </a>
               
             </p>

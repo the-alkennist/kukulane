@@ -1,5 +1,11 @@
 $(document).ready(function () {
     // Function to fetch user's orders from API
+
+   // Event listener for clicking #letscartit
+   $("#letscartit").on("click", function() {
+    $("#CartContainer").html("<p>Loading...</p>"); // Show loading message
+    fetchOrders(); // Fetch orders
+});
     function fetchOrders() {
         var accessToken = localStorage.getItem("access_token");
 
@@ -51,6 +57,7 @@ $(document).ready(function () {
             $("#CartContainer").html("<p>Your cart is empty.</p>");
             return;
         }
+        console.log(response);
 
         var totalCost = 0;
         var counter = 1;
@@ -67,12 +74,17 @@ $(document).ready(function () {
                     "</h5>" +
                     "<p>cost_per_kg: " +
                     item.price +
+                    
+                    "<p>quantity: " +
+                    item.quantity+
+                    "<p>cost: "  +
+                    item.cost +
                     "</p>" +
                     '<button class="delete-order-btn" data-order-id="' +
                     order.id +
                     '">Delete</button>' +
                     "</div>";
-                totalCost += item.price;
+                totalCost += item.cost;
             });
 
             orderItemsHtml += "<p>Total Cost: KES " + totalCost.toFixed(2) + "</p>";
@@ -84,6 +96,11 @@ $(document).ready(function () {
             var orderId = $(this).data("order-id");
             deleteOrder(orderId);
         });
+
+         // Add "Go to Checkout" button
+   // Add "Go to Checkout" button with inline CSS
+$("#CartContainer").append('<a href="checkout.html" style="border: 2px solid #3f51b5; background-color: #3f51b5; color: white; padding: 10px 20px; display: inline-block; text-decoration: none; border-radius: 5px; margin-top: 10px;" class="btn btn-primary">Go to Checkout</a>');
+
     }
 
     // Function to handle error response for fetching orders
@@ -167,6 +184,5 @@ $(document).ready(function () {
         });
     }
 
-    // Fetch user's orders when the page loads
-    fetchOrders();
+    
 });
