@@ -67,6 +67,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="cdn/s/cart.js"></script>
   <script src="cdn/s/index.js"></script>
+  <script src="cdn/s/checkout.js"></script>
+
 
 <script>  
   var DT_THEME = {
@@ -571,7 +573,7 @@ top-level-link
  dt-sc-child
 
  menu-item-has-children">
-<a href="collections/all.html" class="  dt-sc-nav-link dropdown"> 
+<a href="all.html" class="  dt-sc-nav-link dropdown"> 
 
 <span>
 Shop 
@@ -748,7 +750,7 @@ Contact Us
 
 
 <div data-section-id="header" data-section-type="header-section" data-header-section>
-  <header id="header"><section class="text-center announcement-bar   hide-mobile"><p>let's wing it! Go to shop, browse and order. <a href="collections/all.html">Shop Now</a>   We're currently not accepting orders on the site.For assistance, please contact us through our <a href="pages/contact.html">contact page</a>.</p>  
+  <header id="header"><section class="text-center announcement-bar   hide-mobile"><p>let's wing it! Go to shop, browse and order. <a href="all.html">Shop Now</a>   We're currently not accepting orders on the site.For assistance, please contact us through our <a href="pages/contact.html">contact page</a>.</p>  
   <a href="javascript:void(0)" class="close close-icon dt-sc-btn"></a></section><style>
   
   .announcement-bar{ 
@@ -1077,7 +1079,7 @@ Contact Us
             dt-sc-child
            
             menu-item-has-children">
-  <a href="collections/all.html" class="  dt-sc-nav-link dropdown"> 
+  <a href="all.html" class="  dt-sc-nav-link dropdown"> 
 
     <span>
       Shop 
@@ -1241,7 +1243,7 @@ mobileNavigationIcon.addEventListener('click', () => {
   
 <!--
   
-  <a href="/cart" class="site-header__cart-toggle js-drawer-open-right dT_MiniCartModelBtn" aria-controls="CartDrawer" aria-expanded="false"  id="cart-number">
+  <a href="/cart" class="site-header__cart-toggle js-drawer-open-right dT_MiniCartModelBtn" aria-controls="CartDrawer" aria-expanded="false"  >
     <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 100 100" xml:space="preserve" >
 <g>
@@ -1324,7 +1326,7 @@ mobileNavigationIcon.addEventListener('click', () => {
   </div>
   </form> 
    
-  <a href="" id="letscartit" class="fa fa-shopping-bag site-header__cart-toggle js-drawer-open-right dT_MiniCartModelBtn" aria-controls="CartDrawer" aria-expanded="false"  id="cart-number">
+  <a href="" id="letscartit" class="fa fa-shopping-bag site-header__cart-toggle js-drawer-open-right dT_MiniCartModelBtn" aria-controls="CartDrawer" aria-expanded="false"  >
  <!--   <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 100 100" xml:space="preserve" >
 <g>
@@ -1343,7 +1345,7 @@ mobileNavigationIcon.addEventListener('click', () => {
     </div>
   </a>
   <!--
-   <a href="/cart" class="site-header__cart-toggle js-drawer-open-right dT_MiniCartModelBtn" aria-controls="CartDrawer" aria-expanded="false"  id="cart-number">
+   <a href="/cart" class="site-header__cart-toggle js-drawer-open-right dT_MiniCartModelBtn" aria-controls="CartDrawer" aria-expanded="false"  >
     <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 100 100" xml:space="preserve" >
 <g>
@@ -2294,179 +2296,7 @@ mobileNavigationIcon.addEventListener('click', () => {
 
 <script>
   // Function to refresh access token
-    function pesapalhook() {
-      var order_id = localStorage.getItem('order_id');
-      var accessToken = localStorage.getItem("access_token");
-
-      $.ajax({
-            url: `https://ksdfj-kb97.onrender.com/api/user/payments/stripe/create-checkout-session/${order_id}/`,
-            type: 'POST',
-            contentType: 'application/json',
-            headers: {
-          Authorization: "Bearer " + accessToken, // Authorization header with bearer token
-      },
-            dataType: 'json',
-          
-            success: function(response) {
-            $('#payment-iframe').attr('src', response.url); // Set src attribute using attr() method
-        },
-            error: function(xhr, textStatus, errorThrown) {
-              toastr.error('Please try again. Error pesa');
-            },
-            complete: function() {
-                    // Show the Pay Now button again
-                    $('#pay-now').show();
-                    $('#spinner').hide(); // Hide the spinner
-                }
-        });
-    }
-    function updateshippingandbilling () {
-      // Compile checkoutData object
-      var checkoutData = {
-                "payment": {
-                    "payment_option": $('#payment-method').val()
-                },
-                "shipping_address": {
-                    "default": true,
-                    "country": $('#country').val(),
-                    "city": $('#city').val(),
-                    "street_address": $('#shipping_address').val(),
-                    "apartment_address": $('#apartment-address').val(),
-                    "postal_code": $('#postal-code').val()
-                },
-                "billing_address": {
-                    "default": true,
-                    "country": $('#country').val(),
-                    "city": $('#city').val(),
-                    "street_address": $('#billing_address').val(),
-                    "apartment_address": $('#apartment-address').val(),
-                    "postal_code": $('#postal-code').val()
-                }
-            };
-
-            console.log(checkoutData);
-
-            // Fetch user details and order details before submitting the form
-            var order_pk = localStorage.getItem('order_id');
-            console.log(order_pk);
-            var accessToken = localStorage.getItem("access_token");
-
-            // Make a request to the local API endpoint with pk
-            $.ajax({
-                url: 'https://ksdfj-kb97.onrender.com/api/user/payments/checkout/' + order_pk + '/',
-                type: 'PATCH',
-                headers: {
-                    Authorization: "Bearer " + accessToken,
-                },
-                contentType: 'application/json',
-                dataType: 'json',
-                data: JSON.stringify(checkoutData),
-                success: function(data) {
-                    // Handle successful response
-                    console.log(data);
-                    toastr.success('Shipping updated');
-                    // Display success message using toastr
-                    pesapalhook();
-                   
-                },
-                error: function(xhr, textStatus, errorThrown) {
-                    // Handle errors here
-                    if (xhr.status === 401 && xhr.responseJSON.code === "token_not_valid") {
-                        // Token not valid, attempt to refresh token
-                        checkoutrefresher();
-                    } else {
-                        console.error('There was a problem with the AJAX request:', textStatus, errorThrown);
-                        // Display error message using toastr
-                        toastr.error('Payment failed. Please try again later.');
-                    }
-                }
-               
-            });
-        
-    }
     
-    function checkoutrefresher() {
-        var refreshToken = localStorage.getItem("refresh_token");
-
-        // Make a request to refresh the access token
-        $.ajax({
-            url: 'https://ksdfj-kb97.onrender.com/api/token/refresh/',
-            type: 'POST',
-            contentType: 'application/json',
-            dataType: 'json',
-            data: JSON.stringify({
-                refresh: refreshToken
-            }),
-            success: function(response) {
-                // Update access token in local storage
-                localStorage.setItem("access_token", response.access);
-                // Retry the payment request with the new access token
-                $('#pay-now').click();
-            },
-            error: function(xhr, textStatus, errorThrown) {
-                console.error('Failed to refresh access token:', textStatus, errorThrown);
-                // Handle error here (e.g., redirect to login page)
-                toastr.error('Please login again.');
-                // Redirect user to login page or handle as appropriate
-            }
-        });
-    }
-
-    $(document).ready(function() {
-        $('#pay-now').click(function() {
-            // Hide the Pay Now button and display animation
-            $('#pay-now').hide();
-            $('#spinner').show(); // Show the spinner
-
-            
-          
-
-            // Fetch user details and order details before submitting the form
-            var order_pk = localStorage.getItem('order_id');
-            console.log(order_pk);
-            var accessToken = localStorage.getItem("access_token");
-            console.log(accessToken);
-            // Make a request to the local API endpoint with pk
-            $.ajax({
-      url: 'https://ksdfj-kb97.onrender.com/api/user/payments/payments/',
-      type: 'POST', // Method used to send the request
-      headers: {
-          Authorization: "Bearer " + accessToken, // Authorization header with bearer token
-      },
-      contentType: 'application/json', // Content type of the request payload
-      dataType: 'json', // Expected data type of the response
-      data: JSON.stringify({ // Request payload data
-          "payment_option": "P", // Payment option, such as 'P' for Pesapal
-          "order": order_pk // ID of the order associated with the payment
-      }),
-      success: function(data) { // Success callback function
-          // Handle successful response
-          console.log(data); // Log the response data
-          // Display success message using toastr
-          updateshippingandbilling();
-          toastr.success('Payment successful!');
-      },
-      error: function(xhr, textStatus, errorThrown) { // Error callback function
-          // Handle errors here
-          if (xhr.status === 401 && xhr.responseJSON.code === "token_not_valid") {
-              // Token not valid, attempt to refresh token
-              checkoutrefresher();
-          } else {
-              console.error('There was a problem with the AJAX request:', textStatus, errorThrown);
-              // Display error message using toastr
-              toastr.error('Payment failed. Please try again later.');
-          }
-      },
-      complete: function() { // Complete callback function
-          // Show the Pay Now button again
-          $('#pay-now').show();
-          $('#spinner').hide(); // Hide the spinner
-      }
-  });
-
-
-        });
-    });
   </script>
 
 

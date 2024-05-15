@@ -2,7 +2,7 @@ $(document).ready(function () {
   // Function to fetch user's orders from API
   function fetchOrders() {
     $.ajax({
-      url: "/api/user/orders/", // Update with your API endpoint
+      url: "/api/user/orders/orders/", // Update with your API endpoint
       type: "GET",
       success: function (response) {
         // Clear previous cart content

@@ -12,7 +12,7 @@ $(document).ready(function () {
     }
 
     $.ajax({
-      url: "/api/user/orders/", // Update with your API endpoint
+      url: "/api/user/orders/orders/", // Update with your API endpoint
       type: "GET",
       headers: {
         Authorization: "Bearer " + accessToken, // Include access token in the request headers
