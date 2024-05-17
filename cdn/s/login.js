@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   document.getElementById("spinner").style.display = "none";
                   document.getElementById("signinbtn").style.display = "block";
   
-                  toastr.error('Please try again');
+                  toastr.error('Please try again'+ xhr.responseText);
               }
           }
       };
