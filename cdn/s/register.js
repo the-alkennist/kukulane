@@ -16,49 +16,28 @@ document.getElementById("create_customer").addEventListener("submit", function(e
     // Log JSON data before sending
     console.log("JSON data before sending:", formData);
 
-    // Send AJAX request
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://ksdfj-kb97.onrender.com/api/user/register/", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          // Success callback
-          console.log("Registration successful");
-          // You can add further actions here, such as redirecting the user or showing a success message
-          document.getElementById("spinner").style.display = "none";
-          document.getElementById("registerbtn").style.display = "block";
+    $.ajax({
+  type: "POST",
+  url: "https://ksdfj-kb97.onrender.com/api/user/register/",
+  contentType: "application/json",
+  dataType: "json",
+  data: JSON.stringify(formData),
+  beforeSend: function() {
+    $("#spinner").show();
+    $("#registerbtn").hide();
+  },
+  success: function(response) {
+    console.log("Registration successful");
+    $("#spinner").hide();
+    $("#registerbtn").show();
+    window.location.href = "../index.html";
+  },
+  error: function(xhr, status, error) {
+    console.error(error);
+    toastr.error('Registration failed: ' + xhr.responseText);
+    $("#spinner").hide();
+    $("#registerbtn").show();
+  }
+});
+});
 
-          window.location.href = "../index.html";
-    // toastr.success('Logged in successfully');
-
-  
-
-        } else if (xhr.status === 201) {
-          // Success callback
-          console.log("Registration successful");
-          // You can add further actions here, such as redirecting the user or showing a success message
-          document.getElementById("spinner").style.display = "none";
-          document.getElementById("registerbtn").style.display = "block";
-
-          window.location.href = "../index.html";
-    // toastr.success('Logged in successfully');
-
-  
-         }
-         else {
-          // Error callback
-          console.error("Registration failed");
-         toastr.error('Registration failed: ' + xhr.responseText);
-          document.getElementById("spinner").style.display = "none";
-          document.getElementById("registerbtn").style.display = "block";
-
-
-  
-          // Handle error scenario, such as showing an error message to the user
-        }
-      }
-    };
-    xhr.send(JSON.stringify(formData)); // Send JSON data
-  });
