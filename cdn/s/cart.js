@@ -17,7 +17,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: "https://ksdfj-kb97.onrender.com/api/user/orders/",
+            url: "https://ksdfj-kb97.onrender.com/api/user/orders/orders/",
             type: "GET",
             headers: {
                 Authorization: "Bearer " + accessToken,
@@ -139,7 +139,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: "https://ksdfj-kb97.onrender.com/api/user/orders/" + orderId + "/",
+            url: "https://ksdfj-kb97.onrender.com/api/user/orders/orders/" + orderId + "/",
             type: "DELETE",
             headers: {
                 Authorization: "Bearer " + accessToken,

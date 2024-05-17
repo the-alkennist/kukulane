@@ -3,7 +3,7 @@
         // Function to fetch user's orders from API
         function fetchOrders() {
             $.ajax({
-                url: 'https://ksdfj-kb97.onrender.com/api/user/orders/orders/', // Update with your API endpoint
+                url: 'https://ksdfj-kb97.onrender.com/api/user/orders/orders/orders/', // Update with your API endpoint
                 type: 'GET',
                 success: function (response) {
                     // Clear previous cart content
@@ -45,7 +45,7 @@
         // Function to delete an order
         function deleteOrder(orderId) {
             $.ajax({
-                url: 'https://ksdfj-kb97.onrender.com/api/user/orders/orders/' + orderId + '/', // Update with your API endpoint
+                url: 'https://ksdfj-kb97.onrender.com/api/user/orders/orders/orders/' + orderId + '/', // Update with your API endpoint
                 type: 'DELETE',
                 success: function () {
                     // Order deleted successfully, fetch updated orders
