@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
 document.getElementById("create_customer").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the form from submitting normally
     document.getElementById("spinner").style.display = "block";
@@ -38,6 +39,7 @@ document.getElementById("create_customer").addEventListener("submit", function(e
     $("#spinner").hide();
     $("#registerbtn").show();
   }
+});
 });
 });
 
