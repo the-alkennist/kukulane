@@ -3,7 +3,7 @@ $(document).ready(function() {
         var accessToken = localStorage.getItem("access_token");
     
         $.ajax({
-            url: `https://ksdfj-kb97.onrender.com/api/user/payments/stripe/create-checkout-session/`,
+            url: `https://ksdfj-kb97.onrender.com/api/user/payments/create-checkout-session/`,
             type: 'POST',
             contentType: 'application/json',
             headers: {
@@ -33,7 +33,7 @@ $(document).ready(function() {
     }
     
 
-  function updateshippingandbilling () {
+  function updateshippingandbilling (callback, clicker) {
     // Compile checkoutData object
     var checkoutData = {
               "payment": {
@@ -78,34 +78,34 @@ $(document).ready(function() {
                   // Handle successful response
                   console.log(data);
                   toastr.success('Shipping updated');
+                  if (typeof callback === 'function') {
+                    callback();
+                }
                   
-                  pesapalhook();
+                  
                  
               },
               error: function(xhr, textStatus, errorThrown) {
                   // Handle errors here
                   if (xhr.status === 401 && xhr.responseJSON.code === "token_not_valid") {
                       // Token not valid, attempt to refresh token
-                      checkoutrefresher();
+                      checkoutrefresher(clicker);
                   } else {
                       console.error('There was a problem with the AJAX request:', textStatus, errorThrown);
-
+                      clicker.show();
+                      $('#spinner').hide();
                       // Display error message using toastr
                       toastr.error('Payment failed. Please try again later.');
                   }
               },
-              complete: function() {
-                // Show the Pay Now button again
-                $('#pay-now').show();
-                $('#spinner').hide(); // Hide the spinner
-            }
+             
 
              
           });
       
   }
   
-  function checkoutrefresher() {
+  function checkoutrefresher(clicker) {
       var refreshToken = localStorage.getItem("refresh_token");
 
       // Make a request to refresh the access token
@@ -121,14 +121,14 @@ $(document).ready(function() {
               // Update access token in local storage
               localStorage.setItem("access_token", response.access);
               // Retry the payment request with the new access token
-              $('#pay-now').click();
+              clicker.click();
           },
           error: function(xhr, textStatus, errorThrown) {
               console.error('Failed to refresh access token:', textStatus, errorThrown);
               // Handle error here (e.g., redirect to login page)
               toastr.error('Please login again.');
               // Redirect user to login page or handle as appropriate
-              $('#pay-now').show();
+              clicker.show();
                 $('#spinner').hide();
           }
       });
@@ -142,50 +142,57 @@ $(document).ready(function() {
 
           
         
-
+            var paynow = $('#pay-now');
           // Fetch user details and order details before submitting the form
           var order_pk = localStorage.getItem('order_id');
           console.log(order_pk);
           var accessToken = localStorage.getItem("access_token");
           console.log(accessToken);
-          updateshippingandbilling();
-          // Make a request to the local API endpoint with pk
-    //       $.ajax({
-    // url: 'https://ksdfj-kb97.onrender.com/api/user/payments/payments/',
-    // type: 'POST', // Method used to send the request
-    // headers: {
-    //     Authorization: "Bearer " + accessToken, // Authorization header with bearer token
-    // },
-    // contentType: 'application/json', // Content type of the request payload
-    // dataType: 'json', // Expected data type of the response
-    // data: JSON.stringify({ // Request payload data
-    //     "payment_option": "P", // Payment option, such as 'P' for Pesapal
-    //     "order": order_pk // ID of the order associated with the payment
-    // }),
-    // success: function(data) { // Success callback function
-    //     // Handle successful response
-    //     console.log(data); // Log the response data
-    //     // Display success message using toastr
-    //     updateshippingandbilling();
-    //     // toastr.success('');
-    // },
-    // error: function(xhr, textStatus, errorThrown) { // Error callback function
-    //     // Handle errors here
-    //     if (xhr.status === 401 && xhr.responseJSON.code === "token_not_valid") {
-    //         // Token not valid, attempt to refresh token
-    //         checkoutrefresher();
-    //     } else {
-    //         console.error('There was a problem with the AJAX request:', textStatus, errorThrown);
-    //         // Display error message using toastr
-    //         toastr.error('Payment failed. Please try again later.');
-    //     }
-    // },
-    // complete: function() { // Complete callback function
-    //     // Show the Pay Now button again
-    //     $('#pay-now').show();
-    //     $('#spinner').hide(); // Hide the spinner
-    // }
+          updateshippingandbilling(pesapalhook, paynow);
+          
 });
+$('#pay-later').click(function() {
+    // Hide the Pay Now button and display animation
+    $('#pay-later').hide();
+    $('#spinner').show(); // Show the spinner
+
+    
+    var paylater = $('#pay-later');
+  
+
+    // Fetch user details and order details before submitting the form
+    var order_pk = localStorage.getItem('order_id');
+    console.log(order_pk);
+    var accessToken = localStorage.getItem("access_token");
+    console.log(accessToken);
+    updateshippingandbilling(paylaterhook, paylater);
+
+  })
+
+  function paylaterhook() {
+    var accessToken = localStorage.getItem("access_token");
+    $.ajax({
+        url: `https://ksdfj-kb97.onrender.com/api/user/payments/pay_later/`,
+        type: 'POST',
+        headers: {
+            Authorization: "Bearer " + accessToken, // Authorization header with bearer token
+        },      
+        
+        success: function(response) {
+            toastr.success('Order updated to pay later.');
+            $('#pay-later').show();
+                $('#spinner').hide();
+            // Update the UI as needed, e.g., display the updated status
+        },
+        error: function(xhr, textStatus, errorThrown)  {
+            console.error('There was a problem with the AJAX request:', textStatus, errorThrown);
+            $('#pay-later').show();
+                $('#spinner').hide();
+            toastr.error('An error occurred. Try again');
+        }
+    });
+  }
 
 
       });
+     
