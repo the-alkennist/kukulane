@@ -50,8 +50,7 @@ document.getElementById("create_customer").addEventListener("submit", function(e
          else {
           // Error callback
           console.error("Registration failed");
-         
-          toastr.info('Registration failed');
+         toastr.error('Registration failed: ' + xhr.responseText);
           document.getElementById("spinner").style.display = "none";
           document.getElementById("registerbtn").style.display = "block";
 
