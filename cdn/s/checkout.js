@@ -197,5 +197,32 @@ $(document).ready(function() {
             $("#CartContainer").html("<p>Failed to fetch orders. Please try again later.</p>");
         }
     }
+    function refreshAccessToken(callback) {
+        var refreshToken = localStorage.getItem("refresh_token");
+
+        if (!refreshToken) {
+            console.error("Refresh token not found.");
+            $("#CartContainer").html("<p>Please login first.</p>");
+            return;
+        }
+
+        $.ajax({
+            url: "https://ksdfj-kb97.onrender.com/api/token/refresh/",
+            type: "POST",
+            data: {
+                refresh: refreshToken,
+            },
+            success: function (response) {
+                localStorage.setItem("access_token", response.access);
+                if (typeof callback === 'function') {
+                    callback();
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Failed to refresh token:", error);
+                $("#CartContainer").html("<p>Please login first.</p>");
+            },
+        });
+    }
 
 });
