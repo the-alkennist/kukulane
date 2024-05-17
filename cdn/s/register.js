@@ -34,7 +34,7 @@ document.getElementById("create_customer").addEventListener("submit", function(e
     window.location.href = "../index.html";
   },
   error: function(xhr, status, error) {
-    console.error(error);
+    
     toastr.error('Registration failed: ' + xhr.responseText);
     $("#spinner").hide();
     $("#registerbtn").show();
