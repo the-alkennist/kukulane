@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
               console.log("Response:", response); // Log the response for debugging
               $("#spinner").hide();
               $("#registerbtn").show();
-              window.location.href = "../index.html";
+              window.location.href = "../account/login.html";
               // toastr.success('Registration successful');
           },
           error: function(xhr, status, error) {
