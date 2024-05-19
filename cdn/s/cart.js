@@ -1,9 +1,20 @@
 $(document).ready(function () {
     // Event listener for clicking #letscartit
+    
     $("#letscartit").on("click", function() {
         $("#CartContainer").html("<p>Loading...</p>"); // Show loading message
         fetchOrders(); // Fetch orders
     });
+    $("#invisiblemiracle").on("click", function() {
+        
+        fetchOrders(); // Fetch orders
+    });
+
+     // Function to update the cart count
+     function updateCartCount(count) {
+        $("#CartCount .count").text(count);
+        $("#CartCount").data("cart_item_count", count);
+    }
 
     // Function to fetch user's orders from API
     function fetchOrders() {
@@ -42,22 +53,28 @@ $(document).ready(function () {
     
         if (response.length === 0) {
             $("#CartContainer").html("<p>Your cart is empty. Go to shop</p>");
+            updateCartCount(0);
             return;
         }
     
         var totalCost = 0;
         var counter = 1;
         var hasPendingOrders = false;
+        var pendingOrderCount = 0;
     
         $.each(response, function (index, order) {
             if (order.status === 'P') {
                 hasPendingOrders = true;
+
+                pendingOrderCount++;
+
                 var orderItemsHtml = '';
                 var orderTotalCost = 0;
     
                 $.each(order.order_items, function (idx, item) {
                     var cost = parseInt(item.cost, 10);
                     orderTotalCost += cost;
+                    
     
                     orderItemsHtml += '<div class="cart-item">' +
                         "<h5>" + counter++ + ". " + item.product_name + "</h5>" +
@@ -73,7 +90,8 @@ $(document).ready(function () {
                 $("#CartContainer").append(orderItemsHtml);
             }
         });
-    
+        
+        updateCartCount(pendingOrderCount);
         if (!hasPendingOrders) {
             $("#CartContainer").html("<p>No pending orders found.</p>");
         } else {

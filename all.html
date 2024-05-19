@@ -2228,10 +2228,13 @@ Contact Us
           </div>
         </div>
       </div>
+      <button style="display: none" id="invisiblemiracle"></button>
+
     </li>
     <script>
       $(document).ready(function () {
         // Function to get access token from local storage
+        
       let uniqueId;
         function getAccessToken() {
           return localStorage.getItem('access_token');
@@ -2393,6 +2396,7 @@ showError('Please enter a valid quantity.');
               setTimeout(function () {
                 toastr.clear();
               }, 1000);
+              $('#invisiblemiracle').click();
             },
             error: function (xhr, status, error) {
               handleAjaxError(xhr, status, error, function () {
