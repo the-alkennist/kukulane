@@ -11,7 +11,7 @@ $(document).ready(function() {
       }
 
       $.ajax({
-          url: "https://ksdfj-kb97.onrender.com/api/user/orders/orders/",
+          url: "https://ksdfj-production-1023.up.railway.app/api/user/orders/orders/",
           type: "GET",
           headers: {
               Authorization: "Bearer " + accessToken,
@@ -45,7 +45,7 @@ $(document).ready(function() {
     }
 
     $.ajax({
-        url: "https://ksdfj-kb97.onrender.com/api/token/refresh/",
+        url: "https://ksdfj-production-1023.up.railway.app/api/token/refresh/",
         type: "POST",
         data: {
             refresh: refreshToken,
