@@ -748,7 +748,7 @@ button.mfp-close:before,
 .dt-sc-heading :not(:last-child){margin:0 0 10px 0}
 .dt-sc-heading .dt-sc-btn{display:inline-block}
 
-.dt-sc-heading:after, .dt-sc-heading.place_on_top:before { position: relative; display: inline-block; content: ""; background-image: url(../../../files/pig-meat-titlec2e1.png?v=1543473525); 
+.dt-sc-heading:after, .dt-sc-heading.place_on_top:before { position: relative; display: inline-block; content: "";
   width: 170px; height: 70px; background-size: auto; background-repeat: no-repeat; background-position: center; }
 .dt-sc-heading.place_on_top:after { display: none; }
 
