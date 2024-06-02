@@ -246,7 +246,7 @@ var counter = 0;
 
     if (counter === 1) {
       var buttonContainer = document.getElementById("button-container");
-      buttonContainer.innerHTML = `Shop for ${searchTerm}`;
+      buttonContainer.innerHTML = `Shop for ${searchWords} chicken`;
       buttonContainer.style.display = "block";
   
       
