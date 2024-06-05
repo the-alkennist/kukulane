@@ -1,5 +1,57 @@
 $(document).ready(function() {
 
+     function contactadmin () {
+     
+
+   
+
+          // Get values from the form
+             var checkoutData = {
+            "payment": {
+                "payment_option": $('#payment-method').val()
+            },
+            "shipping_address": {
+                "default": true,
+                "country": $('#country').val(),
+                "city": $('#city').val(),
+                "street_address": $('#shipping_address').val(),
+                "apartment_address": $('#apartment-address').val(),
+                "postal_code": $('#postal-code').val()
+            },
+            "billing_address": {
+                "default": true,
+                "country": $('#country').val(),
+                "city": $('#city').val(),
+                "street_address": $('#billing_address').val(),
+                "apartment_address": $('#apartment-address').val(),
+                "postal_code": $('#postal-code').val()
+            }
+        };
+
+
+
+          // Send the email
+          emailjs.send("service_v3hztj7", "template_2cwcs6b", {
+              to_name: "Kuku~Way Tush", // This can be a dynamic value if needed
+              reply_to: "check message", // Use the email from the form
+              message: checkoutData, // Use the message from the form
+              from_name: "check message", // Use the name from the form
+              phone_no: "user_phone",
+              to_email:"kukuwaytush@gmail.com",
+          })
+              .then(() => {
+                  console.log('SUCCESS!');
+                  toastr.success('Email successfully sent!', 'Success');
+                  form.reset();
+              }, (error) => {
+                  console.log('FAILED...', error);
+                  toastr.error('Failed to send email. Please try again.', 'Error');
+
+              })
+           
+     }
+    
+
     function pesapalhook() {
         var accessToken = localStorage.getItem("access_token");
     
@@ -112,6 +164,7 @@ $(document).ready(function() {
         $('#pay-now').hide();
         $('#spinner').show();
         var paynow = $('#pay-now');
+        contactadmin();
 
         fetchOrders(function() {
             updateshippingandbilling(pesapalhook, paynow);
@@ -122,6 +175,7 @@ $(document).ready(function() {
         $('#pay-later').hide();
         $('#spinner').show();
         var paylater = $('#pay-later');
+        contactadmin();
 
         fetchOrders(function() {
             updateshippingandbilling(paylaterhook, paylater);
