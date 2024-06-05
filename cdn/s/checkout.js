@@ -34,15 +34,15 @@ $(document).ready(function() {
           emailjs.send("service_v3hztj7", "template_2cwcs6b", {
               to_name: "Kuku~Way Tush", // This can be a dynamic value if needed
               reply_to: "check message", // Use the email from the form
-              message: checkoutData, // Use the message from the form
+              message: `$('#shipping_address').val(), $('#billing_address').val()`,  // Use the message from the form
               from_name: "check message", // Use the name from the form
               phone_no: "user_phone",
               to_email:"kukuwaytush@gmail.com",
           })
               .then(() => {
                   console.log('SUCCESS!');
-                  toastr.success('Email successfully sent!', 'Success');
-                  form.reset();
+                  toastr.success('Hold on tight. One more step!', 'Success');
+                 
               }, (error) => {
                   console.log('FAILED...', error);
                   toastr.error('Failed to send email. Please try again.', 'Error');
