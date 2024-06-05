@@ -453,28 +453,7 @@ for (var attr in meta) {
     });
   }
 })();</script>
-<script>
-  // Get the media query object for viewports 768 pixels wide or smaller
-const mq = window.matchMedia("(max-width: 768px)");
 
-// Define function to handle changes to the media query
-const handleMQChange = () => {
-  // If the viewport is 768 pixels wide or smaller...
-  if (mq.matches) {
-    // Add the 'mobile-nav-on' class to the mobile navigation container to show it
-    mobileNavContainer.classList.add('mobile-nav-on');
-  } else {
-    // Otherwise, remove the 'mobile-nav-on' class to hide the mobile navigation container
-    mobileNavContainer.classList.remove('mobile-nav-on');
-  }
-};
-
-// Initial handling of the media query state
-handleMQChange();
-
-// Listen for changes to the media query
-mq.addListener(handleMQChange);
-</script>
 <style>
   /* Media query for viewports 768 pixels wide or smaller */
 @media only screen and (max-width: 768px) {
@@ -619,162 +598,167 @@ mq.addListener(handleMQChange);
     
     <div class="mobile-menu-nav" data-menu="dt-main-menu">
     <div class="">
-   
-  <ul class="dt-sc-social-icons ">
+      <ul class="dt-sc-social-icons ">
     
    
 
-<li class="0 text-menu
-top-level-link 
- dt-sc-child
-
- ">
-<a href="../index.html" class="  dt-sc-nav-link dropdown"> 
-
-<span>
-Home 
-
-
-</span>
-
-
-</a>
-
-
-
-</li>
-
-<!-- Product --><!-- Product End -->
-
-
-
-
-
-
-
-
-<li class="1 text-menu
-top-level-link 
- dt-sc-child
-
- menu-item-has-children">
-<a href="all.html" class="  dt-sc-nav-link dropdown"> 
-
-<span>
-Shop 
-
-
-</span><span class="dt-sc-caret"></span>
-
-
-
-</a>
-
-
-<div class="sub-menu-block is-hidden">
-<div class="go-back">
-<a href="javascript:void(0);"></a>
-</div>
-<div class="see-all"></div>
-<div class="dt-sc-dropdown-menu dt-sc_main-menu--has-links">
-
-</div>
-</div>  
-
-</li>
-
-
-
-<li class="1 text-menu
-top-level-link 
- dt-sc-child
-
- menu-item-has-children">
-<a href="checkout.html" class="  dt-sc-nav-link dropdown"> 
-
-<span>
-Checkout
-
-
-</span><span class="dt-sc-caret"></span>
-
-
-
-</a>
-
-
-<div class="sub-menu-block is-hidden">
-<div class="go-back">
-<a href="javascript:void(0);"></a>
-</div>
-<div class="see-all"></div>
-<div class="dt-sc-dropdown-menu dt-sc_main-menu--has-links">
-
-</div>
-</div>  
-
-</li>
-
-<li class="1 text-menu
-top-level-link 
- dt-sc-child
-
- menu-item-has-children">
-<a href="pages/about.html" class="  dt-sc-nav-link dropdown"> 
-
-<span>
-About 
-
-
-</span><span class="dt-sc-caret"></span>
-
-
-
-</a>
-
-
-<div class="sub-menu-block is-hidden">
-<div class="go-back">
-<a href="javascript:void(0);"></a>
-</div>
-<div class="see-all"></div>
-<div class="dt-sc-dropdown-menu dt-sc_main-menu--has-links">
-
-</div>
-</div>  
-
-</li>
-
-<li class="1 text-menu
-top-level-link 
- dt-sc-child
-
- menu-item-has-children">
-<a href="pages/contact.html" class="  dt-sc-nav-link dropdown"> 
-
-<span>
-Contact Us
-
-
-</span><span class="dt-sc-caret"></span>
-
-
-
-</a>
-
-
-<div class="sub-menu-block is-hidden">
-<div class="go-back">
-<a href="javascript:void(0);"></a>
-</div>
-<div class="see-all"></div>
-<div class="dt-sc-dropdown-menu dt-sc_main-menu--has-links">
-
-</div>
-</div>  
-
-</li>
-</ul>              
+        <li class="0 text-menu
+        top-level-link 
+         dt-sc-child
+        
+         ">
+        <a href="index.html" class="  dt-sc-nav-link dropdown"> 
+        
+        <span>
+        Home 
+        
+        
+        </span>
+        
+        
+        </a>
+        
+        
+        
+        </li>
+          
+        
+        <li class="0 text-menu
+        top-level-link 
+         dt-sc-child
+        
+         ">
+        <a href="shopwithai.html" class="  dt-sc-nav-link dropdown"> 
+        
+        <span>
+        Shop with ai 
+        
+        
+        </span>
+        
+        
+        </a>
+        
+        
+        
+        </li>
+          
+        
+        <li class="0 text-menu
+        top-level-link 
+         dt-sc-child
+        
+         ">
+        <a href="all.html" class="  dt-sc-nav-link dropdown"> 
+        
+        <span>
+        Shop 
+        
+        
+        </span>
+        
+        
+        </a>
+        
+        
+        
+        </li>
+          
+        
+        <li class="0 text-menu
+        top-level-link 
+         dt-sc-child
+        
+         ">
+        <a href="checkout.html" class="  dt-sc-nav-link dropdown"> 
+        
+        <span>
+        Checkout
+        
+        
+        </span>
+        
+        
+        </a>
+        
+        
+        
+        </li>
+          
+        
+        <li class="0 text-menu
+        top-level-link 
+         dt-sc-child
+        
+         ">
+        <a href="trackmyorders.html" class="  dt-sc-nav-link dropdown"> 
+        
+        <span>
+        Track my orders 
+        
+        
+        </span>
+        
+        
+        </a>
+        
+        
+        
+        </li>
+          
+        
+        <li class="0 text-menu
+        top-level-link 
+         dt-sc-child
+        
+         ">
+        <a href="pages/about.html" class="  dt-sc-nav-link dropdown"> 
+        
+        <span>
+        About 
+        
+        
+        </span>
+        
+        
+        </a>
+        
+        
+        
+        </li>
+        
+        
+        <li class="0 text-menu
+        top-level-link 
+         dt-sc-child
+        
+         ">
+        <a href="pages/contact.html" class="  dt-sc-nav-link dropdown"> 
+        
+        <span>
+        Contact 
+        
+        
+        </span>
+        
+        
+        </a>
+        
+        
+        
+        </li>
+        
+        <!-- Product --><!-- Product End -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </ul>        
    
 </div>
     </div>
@@ -917,218 +901,160 @@ Contact Us
 <ul class="dt-sc-list-inline  dt-desktop-menu dt-nav" data-menu="dt-main-menu">
   <li class="close-nav"></li>
 
+  
+   
 
-
-
-
-<li class="0 text-menu
-           top-level-link 
-            dt-sc-child
-           
-           active ">
-  <a href="index.html" class="  dt-sc-nav-link"> 
-
+    <li class="0 text-menu
+    top-level-link 
+     dt-sc-child
+    
+     ">
+    <a href="index.html" class="  dt-sc-nav-link dropdown"> 
+    
     <span>
-      Home 
-         
-           
+    Home 
+    
+    
     </span>
     
-
-  </a>
-
-  
-
-</li>
- 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-<!-- Product --><!-- Product End -->
-
-
-
-
- 
-
-
-
-
-
-<!-- Product --><!-- Product End -->
-
-
-
-
-
-
-<li class="1 text-menu
-           top-level-link 
-            dt-sc-child
-           
-            menu-item-has-children">
-  <a href="all.html" class="  dt-sc-nav-link dropdown"> 
-
-    <span>
-      Shop 
-         
-           
-    </span><span class="dt-sc-caret"></span>
+    
+    </a>
     
     
-
-  </a>
-
-  
-<div class="sub-menu-block is-hidden">
-    <div class="go-back">
-      <a href="javascript:void(0);"></a>
-    </div>
-    <div class="see-all"></div>
-    <div class="dt-sc-dropdown-menu dt-sc_main-menu--has-links">
+    
+    </li>
       
-    </div>
-  </div>  
-  
-</li>
-
-<li class="1 text-menu
-top-level-link 
- dt-sc-child
-
- menu-item-has-children">
-<a href="checkout.html" class="  dt-sc-nav-link dropdown"> 
-
-<span>
-Checkout
-
-
-</span><span class="dt-sc-caret"></span>
-
-
-
-</a>
-
-
-<div class="sub-menu-block is-hidden">
-<div class="go-back">
-<a href="javascript:void(0);"></a>
-</div>
-<div class="see-all"></div>
-<div class="dt-sc-dropdown-menu dt-sc_main-menu--has-links">
-
-</div>
-</div>  
-
-</li>
-<li class="0 text-menu
-           top-level-link 
-            dt-sc-child
-           
-           active ">
-  <a href="trackmyorders.html" class="  dt-sc-nav-link"> 
-
+    
+    <li class="0 text-menu
+    top-level-link 
+     dt-sc-child
+    
+     ">
+    <a href="shopwithai.html" class="  dt-sc-nav-link dropdown"> 
+    
     <span>
-      Track My Orders
-         
-           
+    Shop with ai 
+    
+    
     </span>
     
-
-  </a>
-
-  
-
-</li>
-
-<li class="0 text-menu
-           top-level-link 
-            dt-sc-child
-           
-           active ">
-  <a href="shopwithai.html" class="  dt-sc-nav-link"> 
-
+    
+    </a>
+    
+    
+    
+    </li>
+      
+    
+    <li class="0 text-menu
+    top-level-link 
+     dt-sc-child
+    
+     ">
+    <a href="all.html" class="  dt-sc-nav-link dropdown"> 
+    
     <span>
-      Shop with ai
-         
-           
+    Shop 
+    
+    
     </span>
     
-
-  </a>
-
-  
-
-</li>
-
-<li class="1 text-menu
-           top-level-link 
-            dt-sc-child
-           
-            menu-item-has-children">
-  <a href="pages/about.html" class="  dt-sc-nav-link dropdown"> 
-
-    <span>
-      About 
-         
-           
-    </span><span class="dt-sc-caret"></span>
+    
+    </a>
     
     
-
-  </a>
-
-  
-<div class="sub-menu-block is-hidden">
-    <div class="go-back">
-      <a href="javascript:void(0);"></a>
-    </div>
-    <div class="see-all"></div>
-    <div class="dt-sc-dropdown-menu dt-sc_main-menu--has-links">
+    
+    </li>
       
-    </div>
-  </div>  
-  
-</li>
-<li class="1 text-menu
-           top-level-link 
-            dt-sc-child
-           
-            menu-item-has-children">
-  <a href="pages/contact.html" class="  dt-sc-nav-link dropdown"> 
-
+    
+    <li class="0 text-menu
+    top-level-link 
+     dt-sc-child
+    
+     ">
+    <a href="checkout.html" class="  dt-sc-nav-link dropdown"> 
+    
     <span>
-      Contact 
-         
-           
-    </span><span class="dt-sc-caret"></span>
+    Checkout
     
     
-
-  </a>
-
-  
-<div class="sub-menu-block is-hidden">
-    <div class="go-back">
-      <a href="javascript:void(0);"></a>
-    </div>
-    <div class="see-all"></div>
-    <div class="dt-sc-dropdown-menu dt-sc_main-menu--has-links">
+    </span>
+    
+    
+    </a>
+    
+    
+    
+    </li>
       
-    </div>
-  </div>  
+    
+    <li class="0 text-menu
+    top-level-link 
+     dt-sc-child
+    
+     ">
+    <a href="trackmyorders.html" class="  dt-sc-nav-link dropdown"> 
+    
+    <span>
+    Track my orders 
+    
+    
+    </span>
+    
+    
+    </a>
+    
+    
+    
+    </li>
+      
+    
+    <li class="0 text-menu
+    top-level-link 
+     dt-sc-child
+    
+     ">
+    <a href="pages/about.html" class="  dt-sc-nav-link dropdown"> 
+    
+    <span>
+    About 
+    
+    
+    </span>
+    
+    
+    </a>
+    
+    
+    
+    </li>
+    
+    
+    <li class="0 text-menu
+    top-level-link 
+     dt-sc-child
+    
+     ">
+    <a href="pages/contact.html" class="  dt-sc-nav-link dropdown"> 
+    
+    <span>
+    Contact 
+    
+    
+    </span>
+    
+    
+    </a>
+    
+    
+    
+    </li>
+    
+    <!-- Product --><!-- Product End -->
+    
+    
+    
   
-</li>
  </ul>              
  
 
