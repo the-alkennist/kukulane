@@ -451,27 +451,18 @@ for (var attr in meta) {
     });
   }
 })();</script>
-<script>
-  // Get the media query object for viewports 768 pixels wide or smaller
-const mq = window.matchMedia("(max-width: 768px)");
 
-// Define function to handle changes to the media query
-const handleMQChange = () => {
-  // If the viewport is 768 pixels wide or smaller...
-  if (mq.matches) {
-    // Add the 'mobile-nav-on' class to the mobile navigation container to show it
-    mobileNavContainer.classList.add('mobile-nav-on');
-  } else {
-    // Otherwise, remove the 'mobile-nav-on' class to hide the mobile navigation container
-    mobileNavContainer.classList.remove('mobile-nav-on');
-  }
-};
-
-// Initial handling of the media query state
-handleMQChange();
-
-// Listen for changes to the media query
-mq.addListener(handleMQChange);
+	<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+  (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init({
+          publicKey: "pDOFmZDBEn9GaWGM_",
+      });
+  })();
 </script>
 <style>
   /* Media query for viewports 768 pixels wide or smaller */
@@ -2100,10 +2091,6 @@ mobileNavigationIcon.addEventListener('click', () => {
     </div>
 </div>
 
-<script>
-  // Function to refresh access token
-    
-  </script>
 
 
   
