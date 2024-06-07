@@ -34,7 +34,8 @@ $(document).ready(function() {
           emailjs.send("service_v3hztj7", "template_2cwcs6b", {
               to_name: "Kuku~Way Tush", // This can be a dynamic value if needed
               reply_to: "check message", // Use the email from the form
-              message: `$('#shipping_address').val(), $('#billing_address').val()`,  // Use the message from the form
+               message: $('#shipping_address').val() + ', ' + $('#billing_address').val(), // Use the message from the form
+        
               from_name: "check message", // Use the name from the form
               phone_no: "user_phone",
               to_email:"kukuwaytush@gmail.com",
