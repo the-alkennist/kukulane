@@ -1,5 +1,21 @@
 $(document).ready(function() {
 
+    document.getElementById('billing_address').addEventListener('input', function(event) {
+        const input = event.target;
+        const value = input.value;
+    
+        // Ensure +254 is present and cannot be deleted
+        if (!value.startsWith('+254')) {
+          input.value = '+254';
+        }
+    
+        // Ensure only digits follow +254
+        const digitsOnly = value.slice(4).replace(/\D/g, '');
+        input.value = '+254' + digitsOnly.slice(0, 9);
+      });
+
+
+
      function contactadmin () {
      
 
@@ -161,7 +177,12 @@ $(document).ready(function() {
         });
     }
 
-    $('#pay-now').click(function() {
+    $('#pay-now').click(function(event) {
+        const phoneInput = document.getElementById('billing_address').value;
+        if (phoneInput.length !== 13) {
+        toastr.error('Please enter a valid phone number with exactly 9 digits following +254.');
+        event.preventDefault();
+        }
         $('#pay-now').hide();
         $('#spinner').show();
         var paynow = $('#pay-now');
@@ -172,7 +193,12 @@ $(document).ready(function() {
         });
     });
 
-    $('#pay-later').click(function() {
+    $('#pay-later').click(function(event) {
+        const phoneInput = document.getElementById('billing_address').value;
+        if (phoneInput.length !== 13) {
+        toastr.error('Please enter a valid phone number with exactly 9 digits following +254.');
+        event.preventDefault();
+        }
         $('#pay-later').hide();
         $('#spinner').show();
         var paylater = $('#pay-later');
