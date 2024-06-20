@@ -180,33 +180,38 @@ $(document).ready(function() {
     $('#pay-now').click(function(event) {
         const phoneInput = document.getElementById('billing_address').value;
         if (phoneInput.length !== 13) {
-        toastr.error('Please enter a valid phone number with exactly 9 digits following +254.');
-        event.preventDefault();
+            toastr.error('Please enter a valid phone number with exactly 9 digits following +254.');
+            event.preventDefault();
         }
-        $('#pay-now').hide();
-        $('#spinner').show();
-        var paynow = $('#pay-now');
-        contactadmin();
 
-        fetchOrders(function() {
-            updateshippingandbilling(pesapalhook, paynow);
-        });
+        else {
+            $('#pay-now').hide();
+            $('#spinner').show();
+            var paynow = $('#pay-now');
+            contactadmin();
+
+            fetchOrders(function() {
+                updateshippingandbilling(pesapalhook, paynow);
+            });
+        }
     });
 
     $('#pay-later').click(function(event) {
         const phoneInput = document.getElementById('billing_address').value;
         if (phoneInput.length !== 13) {
-        toastr.error('Please enter a valid phone number with exactly 9 digits following +254.');
-        event.preventDefault();
+            toastr.error('Please enter a valid phone number with exactly 9 digits following +254.');
+            event.preventDefault();
         }
-        $('#pay-later').hide();
-        $('#spinner').show();
-        var paylater = $('#pay-later');
-        contactadmin();
+        else{
+            $('#pay-later').hide();
+            $('#spinner').show();
+            var paylater = $('#pay-later');
+            contactadmin();
 
-        fetchOrders(function() {
-            updateshippingandbilling(paylaterhook, paylater);
-        });
+            fetchOrders(function() {
+                updateshippingandbilling(paylaterhook, paylater);
+            });
+        }
     });
 
     function paylaterhook() {
