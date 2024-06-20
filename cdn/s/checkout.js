@@ -262,7 +262,7 @@ $(document).ready(function() {
                 }
             },
             error: function (xhr, status, error) {
-                handleOrdersError(xhr, status, error);
+                handleOrdersError(xhr, status, error, callback);
             },
         });
     }
@@ -275,7 +275,7 @@ $(document).ready(function() {
         });
     }
 
-    function handleOrdersError(xhr, status, error) {
+    function handleOrdersError(xhr, status, error, callback) {
         if (xhr.status === 401 && xhr.responseJSON.code === "token_not_valid") {
             refreshAccessToken(function() { fetchOrders(callback); });
         } else {
