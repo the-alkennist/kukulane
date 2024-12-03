@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
       // Send AJAX request to obtain the token
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", "https://ksdfj-1.onrender.com//api/token/", true);
+      xhr.open("POST", "https://ksdfj-1.onrender.com/api/token/", true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.setRequestHeader("Accept", "application/json");
       xhr.onreadystatechange = function() {

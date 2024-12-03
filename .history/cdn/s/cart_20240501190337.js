@@ -13,7 +13,7 @@
                   return;
               }
             $.ajax({
-                url: 'https://ksdfj-1.onrender.com//api/user/orders/orders/orders/', // Update with your API endpoint
+                url: 'https://ksdfj-1.onrender.com/api/user/orders/orders/orders/', // Update with your API endpoint
                 type: 'GET',
                 headers: {
                     'Authorization': 'Bearer ' + accessToken // Include access token in the request headers

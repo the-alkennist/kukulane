@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       $.ajax({
           type: "POST",
-          url: "https://ksdfj-1.onrender.com//api/user/register/",
+          url: "https://ksdfj-1.onrender.com/api/user/register/",
           contentType: "application/json",
           dataType: "json",
           data: JSON.stringify(formData),

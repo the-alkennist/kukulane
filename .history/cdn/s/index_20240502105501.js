@@ -17,7 +17,7 @@ $(document).ready(function () {
     
         // Make a POST request to logout endpoint
         $.post({
-            url: "https://ksdfj-1.onrender.com//logout/",
+            url: "https://ksdfj-1.onrender.com/logout/",
             headers: {
                 "Authorization": "Bearer " + accessToken
             },
@@ -38,7 +38,7 @@ $(document).ready(function () {
     
     // Make a GET request to fetch user's profile
     $.ajax({
-        url: "https://ksdfj-1.onrender.com//api/user/profile/",
+        url: "https://ksdfj-1.onrender.com/api/user/profile/",
         type: "GET",
         headers: {
             "Authorization": "Bearer " + accessToken

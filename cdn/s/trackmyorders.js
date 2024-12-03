@@ -11,7 +11,7 @@ $(document).ready(function() {
       }
 
       $.ajax({
-          url: "https://ksdfj-1.onrender.com//api/user/orders/orders/",
+          url: "https://ksdfj-1.onrender.com/api/user/orders/orders/",
           type: "GET",
           headers: {
               Authorization: "Bearer " + accessToken,
@@ -45,7 +45,7 @@ $(document).ready(function() {
     }
 
     $.ajax({
-        url: "https://ksdfj-1.onrender.com//api/token/refresh/",
+        url: "https://ksdfj-1.onrender.com/api/token/refresh/",
         type: "POST",
         data: {
             refresh: refreshToken,

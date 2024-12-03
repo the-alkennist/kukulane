@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     // Make a GET request to fetch user's profile
     $.ajax({
-        url: "https://ksdfj-1.onrender.com//api/user/profile/",
+        url: "https://ksdfj-1.onrender.com/api/user/profile/",
         type: "GET",
         headers: {
             "Authorization": "Bearer " + accessToken
