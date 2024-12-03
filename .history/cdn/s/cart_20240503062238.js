@@ -12,7 +12,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: "https://ksdfj-production-1023.up.railway.app/api/user/orders/orders/orders/",
+            url: "https://ksdfj-kb97.onrender.com/api/user/orders/orders/orders/",
             type: "GET",
             headers: {
                 Authorization: "Bearer " + accessToken,
@@ -103,7 +103,7 @@ cache: false, // Prevents caching in jQuery
         }
 
         $.ajax({
-            url: "https://ksdfj-production-1023.up.railway.app/api/token/refresh/",
+            url: "https://ksdfj-kb97.onrender.com/api/token/refresh/",
             type: "POST",
             data: {
                 refresh: refreshToken,
@@ -135,7 +135,7 @@ cache: false, // Prevents caching in jQuery
         }
 
         $.ajax({
-            url: "https://ksdfj-production-1023.up.railway.app/api/user/orders/orders/orders/" + orderId + "/",
+            url: "https://ksdfj-kb97.onrender.com/api/user/orders/orders/orders/" + orderId + "/",
             type: "DELETE",
             headers: {
                 Authorization: "Bearer " + accessToken,

@@ -11,7 +11,7 @@ $(document).ready(function () {
             return;
         }
         $.ajax({
-            url: "https://ksdfj-production-1023.up.railway.app/api/user/orders/orders/orders/", // Update with your API endpoint
+            url: "https://ksdfj-kb97.onrender.com/api/user/orders/orders/orders/", // Update with your API endpoint
             type: "GET",
             headers: {
                 Authorization: "Bearer " + accessToken, // Include access token in the request headers
@@ -65,7 +65,7 @@ $(document).ready(function () {
     // Function to delete an order
     function deleteOrder(orderId) {
         $.ajax({
-            url: "https://ksdfj-production-1023.up.railway.app/api/user/orders/orders/orders/" + orderId + "/", // Update with your API endpoint
+            url: "https://ksdfj-kb97.onrender.com/api/user/orders/orders/orders/" + orderId + "/", // Update with your API endpoint
             type: "DELETE",
             success: function () {
                 // Order deleted successfully, fetch updated orders

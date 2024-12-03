@@ -12,7 +12,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: 'https://ksdfj-production-1023.up.railway.app/api/user/orders/all_orders/',
+            url: 'https://ksdfj-kb97.onrender.com/api/user/orders/all_orders/',
             type: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + accessToken
@@ -99,7 +99,7 @@ $(document).ready(function() {
         const accessToken = localStorage.getItem('access_token');
 
         $.ajax({
-            url: 'https://ksdfj-production-1023.up.railway.app/api/user/orders/all_orders/' + orderId + '/', // Replace with your actual backend API URL for updating order
+            url: 'https://ksdfj-kb97.onrender.com/api/user/orders/all_orders/' + orderId + '/', // Replace with your actual backend API URL for updating order
             type: 'PATCH',
             headers: {
                 'Authorization': 'Bearer ' + accessToken,
@@ -135,7 +135,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: "https://ksdfj-production-1023.up.railway.app/api/token/refresh/",
+            url: "https://ksdfj-kb97.onrender.com/api/token/refresh/",
             type: "POST",
             data: {
                 refresh: refreshToken,

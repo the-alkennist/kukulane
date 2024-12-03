@@ -2315,7 +2315,7 @@ showError('Please enter a valid quantity.');
 
           // Send product information to create product endpoint
           $.ajax({
-            url: 'https://ksdfj-production-1023.up.railway.app/api/products/',
+            url: 'https://ksdfj-kb97.onrender.com/api/products/',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(product),
@@ -2370,7 +2370,7 @@ showError('Please enter a valid quantity.');
 
           // Send order information to add to cart endpoint
           $.ajax({
-            url: 'https://ksdfj-production-1023.up.railway.app/api/user/orders/orders/',
+            url: 'https://ksdfj-kb97.onrender.com/api/user/orders/orders/',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(order),
@@ -2433,7 +2433,7 @@ showError('Please enter a valid quantity.');
           }
 
           $.ajax({
-            url: "https://ksdfj-production-1023.up.railway.app/api/token/refresh/",
+            url: "https://ksdfj-kb97.onrender.com/api/token/refresh/",
             type: "POST",
             data: {
               refresh: refreshToken,
