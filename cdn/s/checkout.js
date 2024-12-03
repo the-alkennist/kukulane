@@ -73,7 +73,7 @@ $(document).ready(function() {
         var accessToken = localStorage.getItem("access_token");
     
         $.ajax({
-            url: `https://ksdfj-kb97.onrender.com/api/user/payments/create-checkout-session/`,
+            url: `https://ksdfj-1.onrender.com//api/user/payments/create-checkout-session/`,
             type: 'POST',
             contentType: 'application/json',
             headers: {
@@ -125,7 +125,7 @@ $(document).ready(function() {
         var accessToken = localStorage.getItem("access_token");
 
         $.ajax({
-            url: 'https://ksdfj-kb97.onrender.com/api/user/payments/checkout/' + order_pk + '/',
+            url: 'https://ksdfj-1.onrender.com//api/user/payments/checkout/' + order_pk + '/',
             type: 'PATCH',
             headers: {
                 Authorization: "Bearer " + accessToken,
@@ -157,7 +157,7 @@ $(document).ready(function() {
         var refreshToken = localStorage.getItem("refresh_token");
 
         $.ajax({
-            url: 'https://ksdfj-kb97.onrender.com/api/token/refresh/',
+            url: 'https://ksdfj-1.onrender.com//api/token/refresh/',
             type: 'POST',
             contentType: 'application/json',
             dataType: 'json',
@@ -217,7 +217,7 @@ $(document).ready(function() {
     function paylaterhook() {
         var accessToken = localStorage.getItem("access_token");
         $.ajax({
-            url: `https://ksdfj-kb97.onrender.com/api/user/payments/pay_later/`,
+            url: `https://ksdfj-1.onrender.com//api/user/payments/pay_later/`,
             type: 'POST',
             headers: {
                 Authorization: "Bearer " + accessToken,
@@ -246,7 +246,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: "https://ksdfj-kb97.onrender.com/api/user/orders/orders/",
+            url: "https://ksdfj-1.onrender.com//api/user/orders/orders/",
             type: "GET",
             headers: {
                 Authorization: "Bearer " + accessToken,
@@ -293,7 +293,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: "https://ksdfj-kb97.onrender.com/api/token/refresh/",
+            url: "https://ksdfj-1.onrender.com//api/token/refresh/",
             type: "POST",
             data: {
                 refresh: refreshToken,

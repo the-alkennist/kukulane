@@ -7,7 +7,7 @@ $(document).ready(function () {
 
         // Make a POST request to the refresh token endpoint
         $.ajax({
-            url: "https://ksdfj-kb97.onrender.com/api/token/refresh/",
+            url: "https://ksdfj-1.onrender.com//api/token/refresh/",
             method: 'POST',
             headers: {
                 "Authorization": "Bearer " + refreshToken
@@ -37,7 +37,7 @@ $(document).ready(function () {
 
         // Make a GET request to fetch user's profile
         $.ajax({
-            url: "https://ksdfj-kb97.onrender.com/api/user/profile/",
+            url: "https://ksdfj-1.onrender.com//api/user/profile/",
             type: "GET",
             headers: {
                 "Authorization": "Bearer " + accessToken
@@ -69,7 +69,7 @@ $(document).ready(function () {
 
         // Make a POST request to logout endpoint
         $.ajax({
-            url: "https://ksdfj-kb97.onrender.com/logout/",
+            url: "https://ksdfj-1.onrender.com//logout/",
             method: 'POST',
             headers: {
                 "Authorization": "Bearer " + accessToken
