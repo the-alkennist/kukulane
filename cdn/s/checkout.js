@@ -15,26 +15,89 @@ $(document).ready(function() {
       });
 
 
-
-      function contactadmin() {
-        const templateParams = {
-            to_name: "kukulane",
-            reply_to: "check message",
-            message: `${$('#shipping_address').val()}, ${$('#billing_address').val()}`,
-            from_name: "check message",
-            phone_no: $('#billing_address').val(),
-            to_email: "lanekuku@gmail.com",
-        };
+      function fetchOrder(callback) {
+        var accessToken = localStorage.getItem("access_token");
     
-        emailjs.send("service_v3hztj7", "template_2cwcs6b", templateParams)
-            .then(() => {
-                console.log('SUCCESS!');
-                toastr.success('Hold on tight. One more step!', 'Success');
-            }, (error) => {
-                console.error('FAILED...', error);
-                toastr.error('Failed to send email. Please try again.', 'Error');
-            });
+        if (!accessToken) {
+            console.error("Access token not found.");
+            return;
+        }
+    
+        $.ajax({
+            url: "https://ksdfj-1.onrender.com/api/user/orders/orders/",
+            type: "GET",
+            headers: {
+                Authorization: "Bearer " + accessToken,
+            },
+            cache: false,
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('Cache-Control', 'no-cache');
+            },
+            success: function (response) {
+                let pendingOrder = response.find(order => order.status === 'P'); // Adjust based on backend response
+                if (pendingOrder) {
+                    localStorage.setItem('order_pk', pendingOrder.id);
+                    if (typeof callback === "function") {
+                        callback(pendingOrder); // Pass the fetched order to the callback
+                    }
+                } else {
+                    console.log("No pending orders found.");
+                    toastr.info("No pending orders available.");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Failed to fetch orders:", error);
+                toastr.error("Failed to fetch orders. Please try again.");
+            },
+        });
     }
+    
+    function contactadmin() {
+        fetchOrder(function(order) {
+            const templateParams = {
+                to_name: "kukulane",
+                reply_to: "check message",
+                message: `Order Details:
+                    Order ID: ${order.id}
+                    Status: ${order.status}
+                    Shipping Address: ${order.shipping_address.street_address}, ${order.shipping_address.city}, ${order.shipping_address.country}
+                    Billing Address: ${order.billing_address.street_address}, ${order.billing_address.city}, ${order.billing_address.country}`,
+                from_name: "check message",
+                phone_no: $('#billing_address').val(),
+                to_email: "lanekuku@gmail.com",
+            };
+    
+            emailjs.send("service_v3hztj7", "template_2cwcs6b", templateParams)
+                .then(() => {
+                    console.log('SUCCESS!');
+                    toastr.success('Order details sent via email.', 'Success');
+                }, (error) => {
+                    console.error('FAILED...', error);
+                    toastr.error('Failed to send email. Please try again.', 'Error');
+                });
+        });
+    }
+    
+    
+    //   function contactadmin() {
+    //     const templateParams = {
+    //         to_name: "kukulane",
+    //         reply_to: "check message",
+    //         message: `${$('#shipping_address').val()}, ${$('#billing_address').val()}`,
+    //         from_name: "check message",
+    //         phone_no: $('#billing_address').val(),
+    //         to_email: "lanekuku@gmail.com",
+    //     };
+    
+    //     emailjs.send("service_v3hztj7", "template_2cwcs6b", templateParams)
+    //         .then(() => {
+    //             console.log('SUCCESS!');
+    //             toastr.success('Hold on tight. One more step!', 'Success');
+    //         }, (error) => {
+    //             console.error('FAILED...', error);
+    //             toastr.error('Failed to send email. Please try again.', 'Error');
+    //         });
+    // }
     
 
     function pesapalhook() {
