@@ -16,57 +16,25 @@ $(document).ready(function() {
 
 
 
-     function contactadmin () {
-     
-
-   
-
-          // Get values from the form
-             var checkoutData = {
-            "payment": {
-                "payment_option": $('#payment-method').val()
-            },
-            "shipping_address": {
-                "default": true,
-                "country": $('#country').val(),
-                "city": $('#city').val(),
-                "street_address": $('#shipping_address').val(),
-                "apartment_address": $('#apartment-address').val(),
-                "postal_code": $('#postal-code').val()
-            },
-            "billing_address": {
-                "default": true,
-                "country": $('#country').val(),
-                "city": $('#city').val(),
-                "street_address": $('#billing_address').val(),
-                "apartment_address": $('#apartment-address').val(),
-                "postal_code": $('#postal-code').val()
-            }
+      function contactadmin() {
+        const templateParams = {
+            to_name: "kukulane",
+            reply_to: "check message",
+            message: `${$('#shipping_address').val()}, ${$('#billing_address').val()}`,
+            from_name: "check message",
+            phone_no: $('#billing_address').val(),
+            to_email: "lanekuku@gmail.com",
         };
-
-
-
-          // Send the email
-          emailjs.send("service_v3hztj7", "template_2cwcs6b", {
-              to_name: "KukuLane Tush", // This can be a dynamic value if needed
-              reply_to: "check message", // Use the email from the form
-               message: $('#shipping_address').val() + ', ' + $('#billing_address').val(), // Use the message from the form
-        
-              from_name: "check message", // Use the name from the form
-              phone_no: "user_phone",
-              to_email:"Kukulanetush@gmail.com",
-          })
-              .then(() => {
-                  console.log('SUCCESS!');
-                  toastr.success('Hold on tight. One more step!', 'Success');
-                 
-              }, (error) => {
-                  console.log('FAILED...', error);
-                  toastr.error('Failed to send email. Please try again.', 'Error');
-
-              })
-           
-     }
+    
+        emailjs.send("service_v3hztj7", "template_2cwcs6b", templateParams)
+            .then(() => {
+                console.log('SUCCESS!');
+                toastr.success('Hold on tight. One more step!', 'Success');
+            }, (error) => {
+                console.error('FAILED...', error);
+                toastr.error('Failed to send email. Please try again.', 'Error');
+            });
+    }
     
 
     function pesapalhook() {
